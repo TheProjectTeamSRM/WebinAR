@@ -1,0 +1,23 @@
+/* CSS for teachers home page */
+.navbar {
+  background: rgb(28, 20, 171);
+  background: linear-gradient(
+    90deg,
+    rgba(28, 20, 171, 1) 2%,
+    rgba(86, 133, 239, 1) 64%,
+    rgba(35, 109, 137, 1) 94%
+  );
+  box-shadow: 10px 10px 8px #888888 !important;
+}
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.fab > .btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 0.3rem 1.5rem;
+  font-size: 50px !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 1000;
+}

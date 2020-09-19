@@ -44,6 +44,7 @@ window.addEventListener("DOMContentLoaded", (e) => {
         data-aos="fade-up" data-aos-delay="400">
           <div class="card-body">
             <h5 class="card-title">${subject}</h5>
+            <p>id:${c}</p>
             <p class="card-text">This is a card for section ${section}</p>
             <a href="Classroom_teacher.html?id=${c}" class="btn btn-primary stretched-link"
               >Open classroom</a
@@ -74,7 +75,6 @@ window.addEventListener("DOMContentLoaded", (e) => {
   });
   let classAdd = document.getElementById("add-class");
 
-  
   classAdd.addEventListener("click", (e) => {
     e.preventDefault();
     const sub = document.getElementById("subject").value;

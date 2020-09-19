@@ -1,41 +1,63 @@
 <!DOCTYPE html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Voice Controlled Notes App</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shoelace-css/1.0.0-beta16/shoelace.css">
-        <!-- <link rel="stylesheet" href="styles.css"> -->
 
-    </head>
-    <body>
-        <div class="container">
-            <div class="app"> 
-                <h3>Add New Note</h3>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Voice Controlled Notes App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shoelace-css/1.0.0-beta16/shoelace.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <div class="app">
+                <h3 style="font-family: 'Roboto';font-size: 2rem;">Add New Note</h3>
                 <div class="input-single">
-                    <textarea id="note-textarea" placeholder="Create a new note by typing or using voice recognition." rows="6"></textarea>
-                </div>         
-                <button id="startbtn" title="Start Recording">Start Recognition</button>
-                <button id="pausebtn" title="Pause Recording">Pause Recognition</button>
-                <button id="savebtn" title="Save Note">Save Note</button>   
-                <p id="recording-instructions">Press the <strong>Start Recognition</strong> button and allow access.</p>
-                <h3>My Notes</h3>
+                    <textarea id="note-textarea" placeholder="Create a new note by typing or using voice recognition."
+                        rows="6"></textarea>
+                </div>
+                <button id="startbtn" style="background-color: #007bff;" title="Start Recording">Start
+                    Recognition</button>
+                <button id="pausebtn" style="background-color: #007bff;" title="Pause Recording">Pause
+                    Recognition</button>
+                <button id="savebtn" style="background-color: #007bff;" title="Save Note">Save Note</button>
+                <p id="recording-instructions" style="font-family: 'Roboto';font-size: 1.2rem;">Press the <strong style="color:#007bff;">Start Recognition</strong>
+                    button and allow access.</p>
+                <h3 style="font-family: 'Roboto';font-size: 2rem;">My Notes</h3>
                 <ul id="notes">
                     <li>
-                        <p class="no-notes">You don't have any notes.</p>
+                        <p class="no-notes" style="font-family: 'Roboto';font-size: 22px;">You don't have any notes.</p>
                     </li>
                 </ul>
 
             </div>
-
         </div>
+    </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="speech.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="speech.js"></script>
 
-        
 
-    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
 </html>

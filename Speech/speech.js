@@ -25,6 +25,18 @@ var noteContent = '';
 var notes = getAllNotes();
 renderNotes(notes);
 
+// Speech recog
+
+function stt(){
+    recognition.start();
+    console.log(' Speech function working');
+    recognition.onresult = function(event) {
+        var word = event.results[0][0].transcript;
+        noteTextarea.textContent = 'Result received: ' + word + '.';
+        console.log('Confidence: ' + event.results[0][0].confidence);
+    }
+
+}
 
 
 //DOM manupulation

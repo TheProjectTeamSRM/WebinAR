@@ -1,16 +1,19 @@
-# Alpha-beta-debug-HackChennai
+# Team Alpha Beta Debug
 
-![License](https://img.shields.io/github/license/shreyab8/Alpha-beta-debug-HackChennai?style=plastic)
-![Status](https://img.shields.io/badge/status-Under_Contruction-red)<br>
-![Collaborators](https://img.shields.io/badge/collaborators-5-green)<br>
+#### Official entry of Team Alpha Beta Debug, from SRM Institute of Science and Technology Kattankulathur, to HackChennai, by SRM Hacker Earth
+
+![Collaborators](https://img.shields.io/badge/collaborators-5-red)<br>
+
+![Status](https://img.shields.io/badge/status-under_development-yellow)<br>
+
+![Issues](https://img.shields.io/badge/issues-0-blue)<br>
+
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)<br>
+
+## Problem Statement 🚧
 
 
-# Webin-Ar
 
-Live: https://gifted-meitner-985120.netlify.app
-
-
-This is the unofficial Repo for HackChennai Hackathon 2020.
 
 
 

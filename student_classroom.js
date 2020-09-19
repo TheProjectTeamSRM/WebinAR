@@ -15,4 +15,19 @@ window.addEventListener("DOMContentLoaded", () => {
         document.getElementById("message-container").appendChild(div);
       }
     });
+  db.collection("documents")
+    .doc(myParam)
+    .onSnapshot((snapshot) => {
+      const data = snapshot.data();
+      for (key in data) {
+        const div = document.createElement("div");
+        div.className = "callout callout-danger";
+        div.style = "border-radius: 20px;";
+        div.innerHTML = `<h5>${data[key].title}</h5>
+      <p>${data[key].description}</p>
+      <a href="${data[key].link}" download
+        >Click here to download</a
+      >`;
+      }
+    });
 });

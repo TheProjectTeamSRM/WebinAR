@@ -108,7 +108,6 @@
       </div>
     </section>
 
-   
     <section id="about" class="about">
       <div class="container">
 
@@ -158,6 +157,22 @@
   <script src="assets/vendor/aos/aos.js"></script>
 
   <script src="assets/js/main.js"></script>
+
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyDr_z5lQ7xv9c46JTRPKJLxF6klmt5JUl8",
+      authDomain: "webinar-9e484.firebaseapp.com",
+      databaseURL: "https://webinar-9e484.firebaseio.com",
+      projectId: "webinar-9e484",
+      storageBucket: "webinar-9e484.appspot.com",
+      messagingSenderId: "140762967682",
+      appId: "1:140762967682:web:1a30fccfa9469ac7ddce9b"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db=firebase.firestore();
+  </script>
+  <script src="assets/js/app.js"></script>
+  
 
 </body>
 

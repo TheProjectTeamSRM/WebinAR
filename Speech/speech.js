@@ -1,13 +1,6 @@
-try {
-    var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    var recognition = new SpeechRecognition();
-  }
-  catch(e) {
-    console.error(e);
-    $('.no-browser-support').show();
-    $('.app').hide();
-  }
-  
+var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+var recognition = new SpeechRecognition();
+
   
   var noteTextarea = $('#note-textarea');
   var instructions = $('#recording-instructions');
@@ -20,32 +13,11 @@ try {
   renderNotes(notes);
   
   
-  
-  /*-----------------------------
-        Voice Recognition 
-  ------------------------------*/
-  
-  // If false, the recording will stop after a few seconds of silence.
-  // When true, the silence period is longer (about 15 seconds),
-  // allowing us to keep recording even when the user pauses. 
+
   recognition.continuous = true;
-  
-  // This block is called every time the Speech APi captures a line. 
   recognition.onresult = function(event) {
-  
-    // event is a SpeechRecognitionEvent object.
-    // It holds all the lines we have captured so far. 
-    // We only need the current one.
     var current = event.resultIndex;
-  
-    // Get a transcript of what was said.
     var transcript = event.results[current][0].transcript;
-  
-    
-  
-    // Add the current transcript to the contents of our Note.
-    // There is a weird bug on mobile, where everything is repeated twice.
-    // There is no official solution so far so we have to handle an edge case.
     var mobileRepeatBug = (current == 1 && transcript == event.results[0][0].transcript);
   
     if(!mobileRepeatBug) {
@@ -70,9 +42,7 @@ try {
   
   
   
-  /*-----------------------------
-        App buttons and input 
-  ------------------------------*/
+ //DOM manupulation
   
   $('#start-record-btn').on('click', function(e) {
     if (noteContent.length) {
@@ -87,7 +57,6 @@ try {
     instructions.text('Voice recognition paused.');
   });
   
-  // Sync the text inside the text area with the noteContent variable.
   noteTextarea.on('input', function() {
     noteContent = $(this).val();
   })
@@ -99,11 +68,7 @@ try {
       instructions.text('Could not save empty note. Please add a message to your note.');
     }
     else {
-      // Save note to localStorage.
-      // The key is the dateTime with seconds, the value is the content of the note.
       saveNote(new Date().toLocaleString(), noteContent);
-  
-      // Reset variables and update UI.
       noteContent = '';
       renderNotes(getAllNotes());
       noteTextarea.val('');
@@ -133,10 +98,7 @@ try {
   
   
   
-  /*-----------------------------
-        Speech Synthesis 
-  ------------------------------*/
-  
+//STT
   function readOutLoud(message) {
       var speech = new SpeechSynthesisUtterance();
   
@@ -148,12 +110,9 @@ try {
     
       window.speechSynthesis.speak(speech);
   }
-  
-  
-  
-  /*-----------------------------
-        Helper Functions 
-  ------------------------------*/
+
+
+//Other functions
   
   function renderNotes(notes) {
     var html = '';

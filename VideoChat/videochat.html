@@ -6,41 +6,44 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Basic Communication</title>
-  <link rel="stylesheet" href="./assets/css/videocall.css" />
+  <link rel="stylesheet" href="./assets/common.css" />
 </head>
+
 <body class="agora-theme">
   <div class="navbar-fixed">
     <nav class="agora-navbar">
       <div class="nav-wrapper agora-primary-bg valign-wrapper">
-        <h5 class="left-align">WebinAR Meet</h5>
+        <h5 class="left-align">WEbinAr</h5>
         
       </div>
     </nav>
   </div>
+
   <form id="form" class="row col l12 s12">
     <div class="row container col l12 s12">
-      <div class="col" style="min-width: 250px; max-width: 250px">
+      <div class="col" style="min-width: 433px; max-width: 443px">
         <div class="card" style="margin-top: 0px; margin-bottom: 0px;">
           <div class="row card-content" style="margin-bottom: 0px;">
-              <div class="input-field">
-                <label for="appID" class="active">App</label>
-                <input type="text" placeholder="App ID" name="appID">
-              </div>
-              <div class="input-field">
-                <label for="channel" class="active">Channel</label>
-                <input type="text" placeholder="channel" name="channel">
-              </div>
-              <div class="input-field">
-                <label for="token" class="active">Token</label>
-                <input type="text" placeholder="token" name="token">
-              </div>
-              <div class="row" style="margin: 0">
-                <div class="col s12">
+            <div class="input-field">
+              <label for="appID" class="active">App ID</label>
+              <input type="text" placeholder="App ID" name="appID">
+            </div>
+            <div class="input-field">
+              <label for="channel" class="active">Channel</label>
+              <input type="text" placeholder="channel" name="channel">
+            </div>
+            <div class="input-field">
+              <label for="token" class="active">Token</label>
+              <input type="text" placeholder="token" name="token">
+            </div>
+            <div class="row" style="margin: 0">
+              <div class="col s12">
                 <button class="btn btn-raised btn-primary waves-effect waves-light" id="join">JOIN</button>
                 <button class="btn btn-raised btn-primary waves-effect waves-light" id="leave">LEAVE</button>
-                
-                </div>
+                <button class="btn btn-raised btn-primary waves-effect waves-light" id="publish">PUBLISH</button>
+                <button class="btn btn-raised btn-primary waves-effect waves-light" id="unpublish">UNPUBLISH</button>
               </div>
+            </div>
           </div>
         </div>
         <ul class="collapsible card agora-secondary-border" style="margin-top: .4rem; border: 1px ">
@@ -108,19 +111,16 @@
         <div class="video-grid" id="video">
           <div class="video-view">
             <div id="local_stream" class="video-placeholder"></div>
-            <br>
             <div id="local_video_info" class="video-profile hide"></div>
-            <br>
             <div id="video_autoplay_local" class="autoplay-fallback hide"></div>
           </div>
         </div>
       </div>
     </div>
   </form>
-  <script src="/assets/vendor/jquery.min.js"></script>
-  <script src="/assets/vendor/materialize.min.js"></script>
-  
-  <script src="/AgoraRTCSDK-3.1.1.js"></script>
+  <script src="vendor/jquery.min.js"></script>
+  <script src="vendor/materialize.min.js"></script>
+  <script src="AgoraRTCSDK-3.1.1.js"></script>
   <script>
     console.log("agora sdk version: " + AgoraRTC.VERSION + " compatible: " + AgoraRTC.checkSystemRequirements());
     var resolutions = [
@@ -142,8 +142,8 @@
       }
     ]
 
-    function Toastify (options) {
-      M.toast({html: options.text, classes: options.classes})
+    function Toastify(options) {
+      M.toast({ html: options.text, classes: options.classes })
     }
 
     var Toast = {
@@ -190,7 +190,7 @@
       return obj
     }
 
-    function addView (id, show) {
+    function addView(id, show) {
       if (!$("#" + id)[0]) {
         $("<div/>", {
           id: "remote_video_panel_" + id,
@@ -204,33 +204,33 @@
 
         $("<div/>", {
           id: "remote_video_info_" + id,
-          class: "video-profile " + (show ? "" :  "hide"),
+          class: "video-profile " + (show ? "" : "hide"),
         }).appendTo("#remote_video_panel_" + id)
 
         $("<div/>", {
-          id: "video_autoplay_"+ id,
+          id: "video_autoplay_" + id,
           class: "autoplay-fallback hide",
         }).appendTo("#remote_video_panel_" + id)
       }
     }
-    function removeView (id) {
+    function removeView(id) {
       if ($("#remote_video_panel_" + id)[0]) {
-        $("#remote_video_panel_"+id).remove()
+        $("#remote_video_panel_" + id).remove()
       }
     }
 
-    function getDevices (next) {
+    function getDevices(next) {
       AgoraRTC.getDevices(function (items) {
         items.filter(function (item) {
           return ["audioinput", "videoinput"].indexOf(item.kind) !== -1
         })
-        .map(function (item) {
-          return {
-          name: item.label,
-          value: item.deviceId,
-          kind: item.kind,
-          }
-        })
+          .map(function (item) {
+            return {
+              name: item.label,
+              value: item.deviceId,
+              kind: item.kind,
+            }
+          })
         var videos = []
         var audios = []
         for (var i = 0; i < items.length; i++) {
@@ -260,7 +260,7 @@
             })
           }
         }
-        next({videos: videos, audios: audios})
+        next({ videos: videos, audios: audios })
       })
     }
 
@@ -275,15 +275,39 @@
 
     var option = {
       appID: "f7f36531cbe948cb88e6b0fa783b9a78",
-      channel: "chem",
+      channel: "doccare",
       uid: null,
-      token: "006f7f36531cbe948cb88e6b0fa783b9a78IADY1KdXKU/TJeYSrOFe1TdDvyBIVsLXPnjzOCq8ICnGT26fmmUAAAAAEADWn1Eqa7UyXwEAAQBstTJf",
+      token: "006f7f36531cbe948cb88e6b0fa783b9a78IACCs3ifSmYjzDU69PT8IDiEgYGRAf9CBa3q/WLNqIimS8Nw8oUAAAAAEABS+F3VkYgtXwEAAQCRiC1f",
     }
 
-   
+    var option = {
+      appID: "f7f36531cbe948cb88e6b0fa783b9a78",
+      channel: "dothraki",
+      uid: null,
+      token: "006f7f36531cbe948cb88e6b0fa783b9a78IACCs3ifSmYjzDU69PT8IDiEgYGRAf9CBa3q/WLNqIimS8Nw8oUAAAAAEABS+F3VkYgtXwEAAQCRiC1f",
+    }
+
+    var option = {
+      appID: "f7f36531cbe948cb88e6b0fa783b9a78",
+      channel: "hello",
+      uid: null,
+      token: "006f7f36531cbe948cb88e6b0fa783b9a78IACCs3ifSmYjzDU69PT8IDiEgYGRAf9CBa3q/WLNqIimS8Nw8oUAAAAAEABS+F3VkYgtXwEAAQCRiC1f",
+    }
 
 
-    function handleEvents (rtc) {
+    /**
+      * rtc: rtc object
+      * option: {
+      *  mode: string, "live" | "rtc"
+      *  codec: string, "h264" | "vp8"
+      *  appID: string
+      *  channel: string, channel name
+      *  uid: number
+      *  token; string,
+      * }
+     **/
+
+    function handleEvents(rtc) {
       // Occurs when an error message is reported and requires error handling.
       rtc.client.on("error", (err) => {
         console.log(err)
@@ -294,7 +318,7 @@
         console.log("id", evt)
         let streams = rtc.remoteStreams.filter(e => id !== e.getId())
         let peerStream = rtc.remoteStreams.find(e => id === e.getId())
-        if(peerStream && peerStream.isPlaying()) {
+        if (peerStream && peerStream.isPlaying()) {
           peerStream.stop()
         }
         rtc.remoteStreams = streams
@@ -310,7 +334,7 @@
         console.log("stream-published")
       })
       // Occurs when the remote stream is added.
-      rtc.client.on("stream-added", function (evt) {  
+      rtc.client.on("stream-added", function (evt) {
         var remoteStream = evt.stream
         var id = remoteStream.getId()
         Toast.info("stream-added uid: " + id)
@@ -336,7 +360,7 @@
         var remoteStream = evt.stream
         var id = remoteStream.getId()
         Toast.info("stream-removed uid: " + id)
-        if(remoteStream.isPlaying()) {
+        if (remoteStream.isPlaying()) {
           remoteStream.stop()
         }
         rtc.remoteStreams = rtc.remoteStreams.filter(function (stream) {
@@ -345,13 +369,13 @@
         removeView(id)
         console.log("stream-removed remote-uid: ", id)
       })
-      rtc.client.on("onTokenPrivilegeWillExpire", function(){
+      rtc.client.on("onTokenPrivilegeWillExpire", function () {
         // After requesting a new token
         // rtc.client.renewToken(token);
         Toast.info("onTokenPrivilegeWillExpire")
         console.log("onTokenPrivilegeWillExpire")
       })
-      rtc.client.on("onTokenPrivilegeDidExpire", function(){
+      rtc.client.on("onTokenPrivilegeDidExpire", function () {
         // After requesting a new token
         // client.renewToken(token);
         Toast.info("onTokenPrivilegeDidExpire")
@@ -370,14 +394,14 @@
       *  token; string,
       * }
      **/
-    function join (rtc, option) {
+    function join(rtc, option) {
       if (rtc.joined) {
         Toast.error("Your already joined")
         return;
       }
 
-      
-      rtc.client = AgoraRTC.createClient({mode: option.mode, codec: option.codec})
+
+      rtc.client = AgoraRTC.createClient({ mode: option.mode, codec: option.codec })
 
       rtc.params = option
 
@@ -388,7 +412,26 @@
       rtc.client.init(option.appID, function () {
         console.log("init success")
 
-   
+        /**
+         * Joins an AgoraRTC Channel
+         * This method joins an AgoraRTC channel.
+         * Parameters
+         * tokenOrKey: string | null
+         *    Low security requirements: Pass null as the parameter value.
+         *    High security requirements: Pass the string of the Token or Channel Key as the parameter value. See Use Security Keys for details.
+         *  channel: string
+         *    A string that provides a unique channel name for the Agora session. The length must be within 64 bytes. Supported character scopes:
+         *    26 lowercase English letters a-z
+         *    26 uppercase English letters A-Z
+         *    10 numbers 0-9
+         *    Space
+         *    "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", "{", "}", "|", "~", ","
+         *  uid: number | null
+         *    The user ID, an integer. Ensure this ID is unique. If you set the uid to null, the server assigns one and returns it in the onSuccess callback.
+         *   Note:
+         *      All users in the same channel should have the same type (number or string) of uid.
+         *      If you use a number as the user ID, it should be a 32-bit unsigned integer with a value ranging from 0 to (232-1).
+        **/
         rtc.client.join(option.token ? option.token : null, option.channel, option.uid ? +option.uid : null, function (uid) {
           Toast.notice("join channel: " + option.channel + " success, uid: " + uid)
           console.log("join channel: " + option.channel + " success, uid: " + uid)
@@ -414,11 +457,11 @@
 
             // publish local stream
             publish(rtc)
-          }, function (err)  {
+          }, function (err) {
             Toast.error("stream init failed, please open console see more detail")
             console.error("init local stream failed ", err)
           })
-        }, function(err) {
+        }, function (err) {
           Toast.error("client join failed, please open console see more detail")
           console.error("client join failed", err)
         })
@@ -428,7 +471,7 @@
       })
     }
 
-    function publish (rtc) {
+    function publish(rtc) {
       if (!rtc.client) {
         Toast.error("Please Join Room First")
         return
@@ -450,7 +493,7 @@
       rtc.published = true
     }
 
-    function unpublish (rtc) {
+    function unpublish(rtc) {
       if (!rtc.client) {
         Toast.error("Please Join Room First")
         return
@@ -470,7 +513,7 @@
       rtc.published = false
     }
 
-    function leave (rtc) {
+    function leave(rtc) {
       if (!rtc.client) {
         Toast.error("Please Join First!")
         return
@@ -485,7 +528,7 @@
        **/
       rtc.client.leave(function () {
         // stop stream
-        if(rtc.localStream.isPlaying()) {
+        if (rtc.localStream.isPlaying()) {
           rtc.localStream.stop()
         }
         // close stream
@@ -493,7 +536,7 @@
         for (let i = 0; i < rtc.remoteStreams.length; i++) {
           var stream = rtc.remoteStreams.shift()
           var id = stream.getId()
-          if(stream.isPlaying()) {
+          if (stream.isPlaying()) {
             stream.stop()
           }
           removeView(id)
@@ -578,4 +621,5 @@
       })
     })
   </script>
+
 </html>

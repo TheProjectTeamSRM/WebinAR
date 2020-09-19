@@ -27,7 +27,7 @@
 <body>
   <!-- Floating Action Buttons -->
   <div class="fab">
-    <button class="btn btn-primary" style="font-size: 8px; vertical-align: text-bottom;
+    <button class="btn btn-primary" id="add-class" style="font-size: 8px; vertical-align: text-bottom;
 align-items: center; border-radius: 10%;" data-toggle="modal" data-target="#createclass">
 +    </button>
   </div>
@@ -204,7 +204,7 @@ align-items: center; border-radius: 10%;" data-toggle="modal" data-target="#crea
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="createclasstitle">Join Classroom</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" id="closeBtn" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -212,18 +212,19 @@ align-items: center; border-radius: 10%;" data-toggle="modal" data-target="#crea
           <form>
             <div class="form-group">
               <label for="subject-code">Subject Code</label>
-              <input type="text" class="form-control" id="subject-code" aria-describedby="subject"
+              <input type="text" id="classCode" class="form-control" id="subject-code" aria-describedby="subject"
                 placeholder="xxxxxx" />
             </div>
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Join</button>
+          <button type="button" id="join" class="btn btn-primary">Join</button>
         </div>
       </div>
     </div>
   </div>
   <!-- Scripts -->
+
   <script src="./assets/js/studentsHome.js" defer></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -245,6 +246,29 @@ align-items: center; border-radius: 10%;" data-toggle="modal" data-target="#crea
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/venobox/venobox.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyDlvtfuPKGuuK9O0JSSrbPpx6mD_mkpm3Q",
+      authDomain: "webin-ar-1095c.firebaseapp.com",
+      databaseURL: "https://webin-ar-1095c.firebaseio.com",
+      projectId: "webin-ar-1095c",
+      storageBucket: "webin-ar-1095c.appspot.com",
+      messagingSenderId: "227270577042",
+      appId: "1:227270577042:web:349af7d441b70b13380f4b",
+      measurementId: "G-4HZ8NY76VD",
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+  </script>
 
   <script src="assets/js/main.js"></script>
 </body>

@@ -16,14 +16,18 @@ img {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  padding: 0.3rem 1.5rem;
-  font-size: 50px !important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   z-index: 1000;
+  border-width: 10px;
 }
 .full-container {
   width: 100vw !important;
 }
+
+ion-icon {
+  font-size: 64px;
+}
+
 .nav-tabs {
   border-bottom-color: rgb(28, 20, 171);
   border-bottom-width: 3px;

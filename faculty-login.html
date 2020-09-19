@@ -59,7 +59,6 @@
               <button id='fLogin' class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
               <br>
               <p>Not a member? Sign up <a href="Signup.html">here.</a></p>
-
             </form>
           </div>
         </div>
@@ -71,7 +70,7 @@
 <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
-    
+
 <script>
   var firebaseConfig = {
     apiKey: "AIzaSyDlvtfuPKGuuK9O0JSSrbPpx6mD_mkpm3Q",
@@ -87,6 +86,40 @@
   firebase.initializeApp(firebaseConfig);
   const auth=firebase.auth();
   const db=firebase.firestore();
+  const provider = new firebase.auth.GoogleAuthProvider();
+
+</script>
+<script>
+    const flogin=document.getElementById('fLogin');
+
+    flogin.addEventListener('click',function(){
+
+  provider.setCustomParameters({
+      'type': 'faculty'
+    });
+
+  auth.signInWithPopup(provider).then(function(cred) {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    var token = cred.credential.accessToken;
+    // The signed-in user info.
+    var user = cred.user;
+    console.log(user);    
+    
+    //console.log(provider.Fb.type);
+    window.location.replace("home-teachers.html");
+    // ...
+  }).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log(errorMessage);  
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+    // ...
+  });
+
+  })
 </script>
 <script src="app.js"></script>
     <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>

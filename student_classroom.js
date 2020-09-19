@@ -1,4 +1,13 @@
+
+auth.onAuthStateChanged(user=>{
+  if(user==null)
+  window.location.replace("student-login.html");
+
+})
+
 window.addEventListener("DOMContentLoaded", () => {
+
+
   const urlParams = new URLSearchParams(window.location.search);
   const myParam = urlParams.get("id");
   console.log(myParam);
@@ -30,4 +39,18 @@ window.addEventListener("DOMContentLoaded", () => {
       >`;
       }
     });
+
+    let logoutBtn = document.getElementById("logout");
+    logoutBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      auth
+        .signOut()
+        .then(function () {
+          window.location.replace("student-login.html");  
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    });
+
 });

@@ -8,6 +8,13 @@ function makeid(length) {
   }
   return result;
 }
+
+auth.onAuthStateChanged(user=>{
+  if(user==null)
+  window.location.replace("faculty-login.html");
+
+});
+
 window.addEventListener("DOMContentLoaded", (e) => {
   const urlParams = new URLSearchParams(window.location.search);
   const myParam = urlParams.get("id");
@@ -144,4 +151,20 @@ window.addEventListener("DOMContentLoaded", (e) => {
           });
       });
   });
+
+
+  let logoutBtn = document.getElementById("logout");
+  logoutBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    auth
+      .signOut()
+      .then(function () {
+        window.location.replace("faculty-login.html");  
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  });
+
+
 });

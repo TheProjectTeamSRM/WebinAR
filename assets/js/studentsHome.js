@@ -1,4 +1,5 @@
 window.addEventListener("DOMContentLoaded", (e) => {
+
   auth.onAuthStateChanged((user) => {
     if (user != null) {
       console.log(user);
@@ -39,6 +40,22 @@ window.addEventListener("DOMContentLoaded", (e) => {
       document.getElementById("classes-container").innerHTML = html;
     }
   }
+
+
+  let logoutBtn = document.getElementById("logout");
+  logoutBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    auth
+      .signOut()
+      .then(function () {
+        window.location.replace("student-login.html");  
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  });
+
+
 });
 
 const classAdd = document.getElementById("join");

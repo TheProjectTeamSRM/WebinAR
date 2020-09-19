@@ -15,17 +15,20 @@ recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 
 
-// //DOM element
-// var diagnostic = document.querySelector('.output', (intg)=>{
-//     intg.preventDefault();
-// });
+//DOM element
+var diagnostic = document.querySelector('.output', (intg)=>{
+    intg.preventDefault();
+});
 
 
 window.setInterval(stt, 10);
+
+
 function contain(inputspeech){
-    // db.collection('testdata').get().then((snapshot)=>{
-    //     console.log(snapshot.docs);
-    // })
+    console.log("in contain")
+    db.collection('testdata').get().then((snapshot)=>{
+        console.log(snapshot.docs);
+    })
     var dict = { };
     var words = inputspeech.toLowerCase().split(/\s+/);
     console.log(words);
@@ -35,9 +38,9 @@ function contain(inputspeech){
             console.log('matched')
             console.log(word);
             dict[word]++;
-            // db.collection('testdata').add({
-            //     data: word
-            // })
+            db.collection('testdata').add({
+                data: word
+            })
         }
     });
     console.log(dict);
@@ -51,7 +54,7 @@ function stt(){
     recognition.onresult = function(event) {
       console.log("in the on result")
       var data = event.results[0][0].transcript;
-     // diagnostic.textContent =  data + ' ';
+      diagnostic.textContent =  data + ' ';
       console.log(data);
       console.log('Confidence: ' + event.results[0][0].confidence);
       contain(data);

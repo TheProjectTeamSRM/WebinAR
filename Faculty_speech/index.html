@@ -6,8 +6,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
+        <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+        <title>Speech to text</title>
+        <meta name="description" content=" faculty speech to text">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
             .output{
@@ -19,9 +22,23 @@
         </style>
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+        <script>
+            var firebaseConfig = {
+                apiKey: "AIzaSyCP9tYzJJ0guGmUJflqBqcteHU_fM5R6Rw",
+                authDomain: "webinar-cf090.firebaseapp.com",
+                databaseURL: "https://webinar-cf090.firebaseio.com",
+                projectId: "webinar-cf090",
+                storageBucket: "webinar-cf090.appspot.com",
+                messagingSenderId: "749795007518",
+                appId: "1:749795007518:web:caac72b4b60dc4d82b220f",
+                measurementId: "G-RGWNCM4JVY"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+            db.settings({ timestampsInSnapshots: true});
+
+    </script>
         
         <textarea class="output"></textarea>
         <script type="module" src="Fspeech.js"></script>

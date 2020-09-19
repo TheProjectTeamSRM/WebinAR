@@ -73,7 +73,7 @@ Here are some of the key benefits of using Webin<b>AR</b> in education and learn
 - AR JS
 - Netlify (For Initial Testing)
 - Web Speech API
-- LineIcons
+- EchoAR
 - Font Awesome
 
 ## Use Cases 🤝

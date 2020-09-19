@@ -1,4 +1,5 @@
 <title>Signup</title>
+<body>  
 <link rel="stylesheet" href="/assets/css/Signup.css" />
 <input class="c-checkbox" type="checkbox" id="start" />
 <input class="c-checkbox" type="checkbox" id="progress2" />
@@ -8,7 +9,7 @@
 
 <div class="c-formContainer">
   <a href="index.html"><div class="c-welcome">Welcome aboard!</div></a>
-  <form class="c-form" action="">
+  <form class="c-form" id="signUpForm" action="">
     <div class="c-form__group">
       <label class="c-form__label" for="username">
         <input
@@ -24,7 +25,7 @@
           <span class="c-form__nextIcon"></span>
         </label>
 
-        <span class="c-form__groupLabel" aria-placeholder="NO SPACE REQUIRED"
+        <span id="username" class="c-form__groupLabel" aria-placeholder="NO SPACE REQUIRED"
           >Create your username.</span
         >
         <b class="c-form__border"></b>
@@ -62,7 +63,7 @@
         />
 
         <label class="c-form__next" for="finish" role="button">
-          <span class="c-form__nextIcon"></span>
+          <span class="c-form__nextIcon" ></span>
         </label>
 
         <span class="c-form__groupLabel">Create your password.</span>
@@ -70,8 +71,38 @@
       </label>
     </div>
 
+
     <label class="c-form__toggle" for="start"
       >Signup<span class="c-form__toggleIcon"></span
     ></label>
+
+   
+    </div>
   </form>
 </div>
+
+<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyDlvtfuPKGuuK9O0JSSrbPpx6mD_mkpm3Q",
+    authDomain: "webin-ar-1095c.firebaseapp.com",
+    databaseURL: "https://webin-ar-1095c.firebaseio.com",
+    projectId: "webin-ar-1095c",
+    storageBucket: "webin-ar-1095c.appspot.com",
+    messagingSenderId: "227270577042",
+    appId: "1:227270577042:web:349af7d441b70b13380f4b",
+    measurementId: "G-4HZ8NY76VD"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  const auth=firebase.auth();
+  const db=firebase.firestore();
+
+</script>
+<script src="Signup.js"></script>  
+</body>

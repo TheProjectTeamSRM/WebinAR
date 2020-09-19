@@ -73,15 +73,21 @@ function stt(){
     }
 
     ///Clearing data
-    clear_data.addEventListener('click', (e) =>{
-        e.stopPropagation();
-        //db.collection('testdata').delete();
-
-        db.collection('testdata').get().then((snapshot)=>{
-            snapshot.forEach((i)=>{
-                i.delete();
-            });
+    clear_data.addEventListener('click',(e) =>{
+        e.stopPropagation();       
+        db.collection("testdata")
+        .get()
+        .then(res => {
+          res.forEach(async element => {
+            await element.ref.delete();            
           });
+        });
+
+        // db.collection('testdata').get().then((snapshot)=>{
+        //     snapshot.forEach((i)=>{
+        //         i.delete();
+        //     });
+        //   });
     })
     
     

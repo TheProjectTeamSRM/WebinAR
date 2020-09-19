@@ -73,6 +73,8 @@ window.addEventListener("DOMContentLoaded", (e) => {
       });
   });
   let classAdd = document.getElementById("add-class");
+
+  
   classAdd.addEventListener("click", (e) => {
     e.preventDefault();
     const sub = document.getElementById("subject").value;

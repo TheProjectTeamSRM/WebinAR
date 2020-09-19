@@ -32,96 +32,88 @@
   <body>
     <!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->
 
-<body>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <div class="card card-signin my-5">
-          <div class="card-body">
-            <h5 class="card-title text-center">Student Sign In</h5>
-            <form class="form-signin">
-              <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                <label for="inputEmail">Email address</label>
-              </div>
+    <body>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+              <div class="card-body">
+                <h5 class="card-title text-center">Student Sign In</h5>
+                <form class="form-signin">
+                  <div class="form-label-group">
+                    <input
+                      type="email"
+                      id="inputEmail"
+                      class="form-control"
+                      placeholder="Email address"
+                      required
+                      autofocus
+                    />
+                    <label for="inputEmail">Email address</label>
+                  </div>
 
-              <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                <label for="inputPassword">Password</label>
-              </div>
+                  <div class="form-label-group">
+                    <input
+                      type="password"
+                      id="inputPassword"
+                      class="form-control"
+                      placeholder="Password"
+                      required
+                    />
+                    <label for="inputPassword">Password</label>
+                  </div>
 
-              <div class="custom-control custom-checkbox mb-3">
-                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                <label class="custom-control-label" for="customCheck1">Remember password</label>
+                  <div class="custom-control custom-checkbox mb-3">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customCheck1"
+                    />
+                    <label class="custom-control-label" for="customCheck1"
+                      >Remember password</label
+                    >
+                  </div>
+                  <button
+                    class="btn btn-lg btn-primary btn-block text-uppercase"
+                    type="submit"
+                    id="loginBtn"
+                  >
+                    Sign in
+                  </button>
+                  <hr class="my-4" />
+                  <br />
+                  <p>
+                    Not a member? Sign up
+                    <a href="SignupUser.html?type=student">here.</a>
+                  </p>
+                </form>
               </div>
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
-              <hr class="my-4">
-                <br>
-              <p>Not a member? Sign up <a href="SignupUser.html?type=student">here.</a></p>
-            </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</body>
+    </body>
 
-<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
-    
-<script>
-  var firebaseConfig = {
-    apiKey: "AIzaSyDlvtfuPKGuuK9O0JSSrbPpx6mD_mkpm3Q",
-    authDomain: "webin-ar-1095c.firebaseapp.com",
-    databaseURL: "https://webin-ar-1095c.firebaseio.com",
-    projectId: "webin-ar-1095c",
-    storageBucket: "webin-ar-1095c.appspot.com",
-    messagingSenderId: "227270577042",
-    appId: "1:227270577042:web:349af7d441b70b13380f4b",
-    measurementId: "G-4HZ8NY76VD"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  const auth=firebase.auth();
-  const db=firebase.firestore();
-  const provider = new firebase.auth.GoogleAuthProvider();
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
 
-</script>
-<script>
-    const slogin=document.getElementById('sLogin');
-
-  slogin.addEventListener('click',function(){
-
-  provider.setCustomParameters({
-      'type': 'student'
-    });
-
-  auth.signInWithPopup(provider).then(function(cred) {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    var token = cred.credential.accessToken;
-    // The signed-in user info.
-    var user = cred.user;
-    console.log(user);    
-    
-    //console.log(provider.Fb.type);
-    window.location.replace("home-students.html");  
-    // ...
-  }).catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    console.log(errorMessage);  
-    var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    var credential = error.credential;
-    
-  });
-
-  })
-</script>
-    
-    
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyDlvtfuPKGuuK9O0JSSrbPpx6mD_mkpm3Q",
+        authDomain: "webin-ar-1095c.firebaseapp.com",
+        databaseURL: "https://webin-ar-1095c.firebaseio.com",
+        projectId: "webin-ar-1095c",
+        storageBucket: "webin-ar-1095c.appspot.com",
+        messagingSenderId: "227270577042",
+        appId: "1:227270577042:web:349af7d441b70b13380f4b",
+        measurementId: "G-4HZ8NY76VD",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+    </script>
     <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -134,5 +126,6 @@
     <script src="assets/vendor/venobox/venobox.min.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="student-login.js"></script>
   </body>
 </html>

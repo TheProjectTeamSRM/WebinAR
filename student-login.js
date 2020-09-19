@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
     auth
       .signInWithEmailAndPassword(email, pass)
       .then((cred) => {
-        window.location.replace("home-teachers.html");
+        window.location.replace("home-students.html");
       })
       .catch(function (error) {
         // Handle Errors here.

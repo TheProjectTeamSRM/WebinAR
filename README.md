@@ -4,7 +4,7 @@
 
 ![Collaborators](https://img.shields.io/badge/collaborators-5-red)<br>
 ![Status](https://img.shields.io/badge/status-under_development-yellow)<br>
-![Issues](https://img.shields.io/badge/issues/ShreyaB8/Alpha-beta-debug-HackChennai)<br>
+![Issues](https://img.shields.io/github/issues/ShreyaB8/Alpha-beta-debug-HackChennai)<br>
 ![Stars](https://img.shields.io/github/stars/ShreyaB8/Alpha-beta-debug-HackChennai)<br>
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)<br>
 

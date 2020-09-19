@@ -50,7 +50,6 @@ Here are some of the key benefits of using Webin<b>AR</b> in education and learn
 
 ## Technology Principles Proposed 💡
 
-- Cloud First
 - Mobile First
 - Interoperable
 - Modular
@@ -74,7 +73,6 @@ Here are some of the key benefits of using Webin<b>AR</b> in education and learn
 - Netlify (For Initial Testing)
 - Web Speech API
 - EchoAR
-- Font Awesome
 
 ## Use Cases 🤝
 
@@ -83,8 +81,10 @@ Here are some of the key benefits of using Webin<b>AR</b> in education and learn
 
 ## Future Upgrades 👀
 
-1. Adding a classroom feature where the user can upload notes, assignment and his works
+1. Adding a classroom feature where the user can upload notes, assignment and the user's works.
 2. Implementing an exam bot (proctored with ML).
+3. PDF classification.
+4. Graphical Progress Report.
 
 ## Collaborators 🤖
 

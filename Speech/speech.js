@@ -1,5 +1,6 @@
-var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-var recognition = new SpeechRecognition();
+var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
+var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
+var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
 
 var noteTextarea = $('#note-textarea');
 var instructions = $('#recording-instructions');

@@ -30,6 +30,8 @@ Here are some of the key benefits of using Webin<b>AR</b> in education and learn
 
 ## About Our Product 🔧
 
+### What
+
 #### We at team Alpha Beta Debug, propose a Web-application which is educative, personalized and most importantly affordable. Our web-app called 'Webin-AR' serves the purpose of educating and helping the students as well as the teachers during this time of the pandemic. This web-app focuses on both primary and secondary education, it helps the students to learn and visualize basic concepts. We do not store any essential data, as Security of the system is our priority. The WebApp provides minimalist interface aimed at users from all age groups.
 
 #### With our product, we have implemented a full fledged classroom experience for the students as well as teachers. We have created separate portals for the faculty and students. Once everyone has signed up to the web-app. The user can simply login using their credentials to their respective portal. 
@@ -41,3 +43,53 @@ Here are some of the key benefits of using Webin<b>AR</b> in education and learn
 #### On the students portal, the student can directly login using their credentials. The portal has the video call feature connected to the faculty portal and by entering the correct App and Token ID the students can attend the class. The models are also connected from the faculty portal, so when the teacher is teaching using the specific model the student also has the freedom to use the model however he wants.
 
 #### We also have implemented a KIDS MODE along with the web-app which is made specially for an age group from 2-7, which uses Augmented Reality to understand and learn. The AR feature is really flexible and interactive, the user can zoom in an out as well as change the position of the AR in space. The user can also play along with the activities given such as locate the AR model to the right marker and many more.
+
+### Why
+
+#### With Webin-AR, we aim at providing a simple interface so users from all age groups can use it. Due to restrictions in movement, and the lockdown that we are under, most of the students and teachers have switched their way of teaching to online. Our product, on the other hand helps students to interact and learn along with the teacher making it simple for the teachers and students. 
+
+## Technology Principles Proposed 💡
+
+- Cloud First
+- Mobile First
+- Interoperable
+- Modular
+- Minimalist Design
+- Reusable
+- Open APIs
+
+## Proposed Technology Stack 💻
+
+- Firebase
+- Azure
+- React
+- React Native
+- HTML, CSS, JavaScript
+
+## Tools and APIs🎯
+
+- Agora
+- SketchFab
+- AR JS
+- Netlify (For Initial Testing)
+- Web Speech API
+- LineIcons
+- Font Awesome
+
+## Use Cases 🤝
+
+1. Reusable code that can be customized for other additional features.
+2. Effective in dealing with the current situation.
+
+## Future Upgrades 👀
+
+1. Adding a classroom feature where the user can upload notes, assignment and his works
+2. Implementing an exam bot (proctored with ML).
+
+## Collaborators 🤖
+
+- [Shreyashri Biswas](https://github.com/ShreyaB8)
+- [Yazid Marzuk K P](https://github.com/yazidmarzuk)
+- [Santo Santhosh](https://github.com/santomat-5111)
+- [Eshaan Bhardwaj](https://github.com/Eshaan-B)
+- [Yash S Narang](https://github.com/yashu2001)

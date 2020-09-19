@@ -30,13 +30,13 @@ Here are some of the key benefits of using AR and VR technology in education and
 
 ## About Our Product 🔧
 
-### What
-
 #### We at team Alpha Beta Debug, propose a Web-application which is educative, personalized and most importantly affordable. Our web-app called 'Webin-AR' serves the purpose of educating and helping the students as well as the teachers during this time of the pandemic. This web-app focuses on both primary and secondary education, it helps the students to learn and visualize basic concepts. We do not store any essential data, as Security of the system is our priority. The WebApp provides minimalist interface aimed at users from all age groups.
 
 #### With our product, we have implemented a fully fledged classroom experience for the students as well as teachers. We have created separate portals for the faculty and students. Once everyone has signed up to the web-app. The user can simply login using their credentials to their respective portal. 
 
 #### The faculty portal will be having a video call feature named 'Webin-AR Meet', where the teacher will be starting the class from one side and the students can join using the credentials given by the teacher. The video call feature allows a better interaction between the teacher and students which is lacking at this time of the pandemic. The video call is secure and by using an App ID and a Token ID,students can only then join the class.
 
-#### The faculty portal also has a feature of voice detection
+#### The faculty portal also has a feature of speech detection and then recognizing the 3D models to be displayed to the students when the teacher is dictating the notes. As mentioned the teacher can now pick any model from the recognized ones and it also allows the students to use it freely by rotating and zooming it. The models are open source and if any model is not there in the recognized models, there is always an option to add a 3D model.
+
+
 

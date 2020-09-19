@@ -38,5 +38,6 @@ Here are some of the key benefits of using Webin<b>AR</b> in education and learn
 
 #### The faculty portal also has a feature of speech detection and then recognizing the 3D models to be displayed to the students when the teacher is dictating the notes. As mentioned the teacher can now pick any model from the recognized ones and it also allows the students to use it freely by rotating and zooming it. The models are open source and if any model is not there in the recognized models, there is always an option to add a 3D model.
 
+#### On the students portal, the student can directly login using their credentials. The portal has the video call feature connected to the faculty portal and by entering the correct App and Token ID the students can attend the class. The models are also connected from the faculty portal, so when the teacher is teaching using the specific model the student also has the freedom to use the model however he wants.
 
-
+#### We also have implemented a KIDS MODE along with the web-app which is made specially for an age group from 2-7, which uses Augmented Reality to understand and learn. The AR feature is really flexible and interactive, the user can zoom in an out as well as change the position of the AR in space. The user can also play along with the activities given such as locate the AR model to the right marker and many more.

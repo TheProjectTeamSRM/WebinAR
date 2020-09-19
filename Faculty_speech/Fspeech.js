@@ -15,10 +15,10 @@ recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 
 
-//DOM element
-var diagnostic = document.querySelector('.output', (intg)=>{
-    intg.preventDefault();
-});
+// //DOM element
+// var diagnostic = document.querySelector('.output', (intg)=>{
+//     intg.preventDefault();
+// });
 
 
 window.setInterval(stt, 10);
@@ -51,7 +51,8 @@ function stt(){
     recognition.onresult = function(event) {
       console.log("in the on result")
       var data = event.results[0][0].transcript;
-      diagnostic.textContent =  data + ' ';
+     // diagnostic.textContent =  data + ' ';
+      console.log(data);
       console.log('Confidence: ' + event.results[0][0].confidence);
       contain(data);
       caption = data;

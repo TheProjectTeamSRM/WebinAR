@@ -122,8 +122,6 @@ var recognition = new SpeechRecognition();
     var html = '';
     if(notes.length) {
       notes.forEach(function(note) {
-        note.content='test';
-        
         html+= `<li class="note">
           <p class="header">
             <span class="date">${note.date}</span>
@@ -133,9 +131,9 @@ var recognition = new SpeechRecognition();
           </p>
           <p class="content">${note.content}</p>
         </li>`;   
-        var data = new Blob([note.content], {type: 'text/plain'});
-        var url = window.URL.createObjectURL(data);
-        document.getElementById('download_link').href = url; 
+        // var data = new Blob([note.content], {type: 'text/plain'});
+        // var url = window.URL.createObjectURL(data);
+        // document.getElementById('download_link').href = url; 
       });
     }
     else {

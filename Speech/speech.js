@@ -27,6 +27,56 @@ renderNotes(notes);
 
 
 
+//DOM manupulation
+
+$('#start-record-btn').on('click', function(e) {
+    if (noteContent.length) {
+      noteContent += ' ';
+    }
+    recognition.start();
+  });
+  
+  
+  $('#pause-record-btn').on('click', function(e) {
+    recognition.stop();
+    instructions.text('Voice recognition paused.');
+  });
+  
+  noteTextarea.on('input', function() {
+    noteContent = $(this).val();
+  })
+  
+  $('#save-note-btn').on('click', function(e) {
+    recognition.stop();
+  
+    if(!noteContent.length) {
+      instructions.text('Could not save empty note. Please add a message to your note.');
+    }
+    else {
+      saveNote(new Date().toLocaleString(), noteContent);
+      noteContent = '';
+      renderNotes(getAllNotes());
+      noteTextarea.val('');
+      instructions.text('Note saved successfully.');
+    }
+        
+  })
+   
+  notesList.on('click', function(e) {
+    e.preventDefault();
+    var target = $(e.target);
+    if(target.hasClass('listen-note')) {
+      var content = target.closest('.note').find('.content').text();
+      readOutLoud(content);
+    }
+    if(target.hasClass('delete-note')) {
+      var dateTime = target.siblings('.date').text();  
+      deleteNote(dateTime);
+      target.closest('.note').remove();
+    }
+  });
+  
+
   // Text to speech
   function readOutLoud(message) {
     var speech = new SpeechSynthesisUtterance();

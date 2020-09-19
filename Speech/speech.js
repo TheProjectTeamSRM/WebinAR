@@ -8,6 +8,8 @@ var recognition = new SpeechRecognition();
   var notesList = $('ul#notes');
   var noteContent = '';
   
+
+
   // Get all notes from previous sessions and display them.
   var notes = getAllNotes();
   renderNotes(notes);
@@ -120,14 +122,20 @@ var recognition = new SpeechRecognition();
     var html = '';
     if(notes.length) {
       notes.forEach(function(note) {
+        note.content='test';
+        
         html+= `<li class="note">
           <p class="header">
             <span class="date">${note.date}</span>
             <a href="#" class="listen-note" title="Listen to Note">Listen to Note</a>
             <a href="#" class="delete-note" title="Delete">Delete</a>
+            <a id="download_link" download="notes.txt" href="" >Download</a>
           </p>
           <p class="content">${note.content}</p>
-        </li>`;    
+        </li>`;   
+        var data = new Blob([note.content], {type: 'text/plain'});
+        var url = window.URL.createObjectURL(data);
+        document.getElementById('download_link').href = url; 
       });
     }
     else {

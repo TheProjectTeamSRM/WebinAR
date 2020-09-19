@@ -26,7 +26,78 @@ window.addEventListener("DOMContentLoaded", (e) => {
         document.getElementById("message-container").appendChild(div);
       }
     });
+
+  db.collection("documents")
+    .doc(myParam)
+    .get()
+    .then((snapshot) => {
+      const data = snapshot.data();
+      for (key in data) {
+        const div = document.createElement("div");
+        div.className = "callout callout-danger";
+        div.style = "border-radius:20px;";
+        div.innerHTML = `<h5>${data[key].title}</h5>
+        <p>${data[key].description}</p>
+        <a href="${data[key].link}" download
+          >Click here to download</a
+        >`;
+        console.log(div);
+        document.getElementById("document-container").appendChild(div);
+      }
+    });
   send_button = document.getElementById("msg_send");
+  documents_button = document.getElementById("doc_btn");
+  documents_button.addEventListener("click", (e) => {
+    e.preventDefault();
+    const title = document.getElementById("file_title").value;
+    const description = document.getElementById("file_description").value;
+    const url = document.getElementById("file_url").value;
+    document.getElementById("file_title").value = "";
+    document.getElementById("file_description").value = "";
+    document.getElementById("file_url").value = "";
+    const id = makeid(7);
+    const payload = {
+      title,
+      description,
+      link: url,
+    };
+    const data = {};
+    data[id] = payload;
+    db.collection("documents")
+      .doc(myParam)
+      .update(data)
+      .then((res) => {
+        const div = document.createElement("div");
+        div.className = "callout callout-danger";
+        div.style = "border-radius:20px;";
+        div.innerHTML = `<h5>${title}</h5>
+        <p>${description}</p>
+        <a href="${url}" download
+          >Click here to download</a
+        >`;
+        console.log(div);
+        document.getElementById("document-container").appendChild(div);
+        document.getElementById("close_documents").click();
+      })
+      .catch((err) => {
+        db.collection("documents")
+          .doc(myParam)
+          .set(data)
+          .then((res) => {
+            const div = document.createElement("div");
+            div.className = "callout callout-danger";
+            div.style = "border-radius:20px;";
+            div.innerHTML = `<h5>${title}</h5>
+          <p>${description}</p>
+          <a href="${url}" download
+            >Click here to download</a
+          >`;
+            console.log(div);
+            document.getElementById("document-container").appendChild(div);
+            document.getElementById("close_documents").click();
+          });
+      });
+  });
   send_button.addEventListener("click", (e) => {
     e.preventDefault();
     let today = new Date();

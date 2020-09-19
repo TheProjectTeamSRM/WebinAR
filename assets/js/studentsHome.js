@@ -54,5 +54,6 @@ classAdd.addEventListener("click", async (e) => {
   let classes = result.data().classes;
   classes.push(classId);
   db.collection("users").doc(auth.currentUser.uid).update({ classes });
+  window.reload();
   document.getElementById("closeBtn").click();
 });

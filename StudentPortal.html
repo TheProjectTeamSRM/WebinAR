@@ -67,51 +67,59 @@
         <br><br><br>
         <div id="target1"
           style=" height: 587px; overflow: scroll; border: 5px solid rgb(75, 159, 255); border-radius: 2%;">
-          <h2 style="font-family: 'Roboto';">&nbsp;3D Models</h2>
-          <!-- Button trigger modal -->
-          &nbsp;
-          <button style="align-items: center;" type="button" class="btn btn-success" data-toggle="modal"
-            data-target="#exampleModal">
-            ADD &plus;
-          </button>
-
-          <div class="jumbotron">
-            <hr class="my-4">
-            <p style="text-align: center; font-family: 'Roboto';font-size: 15px;">The detected models will be displayed
-              here:</p>
-
-            <hr class="my-4">
-
-          </div>
-
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Add new Models Here: </h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <form>
-                    <div class="form-group">
-                      <label for="exampleFormControlInput1">Model Name:</label>
-                      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Model Name">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlInput1">Model URL:</label>
-                      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Model URL">
-                    </div>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+          <h2 style="font-family: 'Roboto';">&nbsp;Add New Note</h2>
+          <div class="container">
+            <div class="app" margin: 5vw;">
+              <hr>
+              <div class="input-single">
+                <div>
+                  <textarea
+                    style=" border-color: #007bff; padding: 20px; border-width: 5px; align-items: center; border-radius: 10px;"
+                    id="note-textarea" placeholder="Create a new note by typing or using voice recognition." rows="6"
+                    cols="12"></textarea>
                 </div>
               </div>
+
+              <div class="container">
+                <div class="row row-cols-4">
+                  <div class="col">
+                    <div class="buttons">
+                      <div class="container1">
+
+                        <a href="" class="btn1 effect01" target="_blank"><span>Start
+                            </span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="buttons">
+                      <div class="container1">
+
+                        <a href="" class="btn1 effect01" target="_blank"><span>Pause </span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="buttons">
+                      <div class="container1">
+
+                        <a href="" class="btn1 effect01" target="_blank"><span>Save </span></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p id="recording-instructions" style="font-family: 'Roboto';font-size: 20px;">Press the <strong
+                  style="color:#007bff;">Start Recognition</strong>
+                button and allow access.</p>
+              <h3 style="font-family: 'Roboto';font-size: 20px;">My Notes</h3>
+              <hr>
+              <ul id="notes">
+
+                <li>
+                  <p class="no-notes" style="font-family: 'Roboto';font-size: 22px;">You don't have any notes.</p>
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -162,116 +170,138 @@
                 </div>
             </div>
 
-            <div class="column nature">
-              <button>
-                <div class="content">
-                  <img alt="Brain" id="https://p3d.in/TjhKw" onclick="upload(this.id,this.alt)"
-                    src="assets/3dmodels/thumbnails/brain.png" style="width:80%">
-                  <p style="font-size: x-small;">Brain</p>
-                </div>
-            </div>
 
-            <div class="column nature">
-              <button>
-                <div class="content">
-                  <img alt="Spine" id="https://p3d.in/5DMLi" onclick="upload(this.id,this.alt)"
-                    src="assets/3dmodels/thumbnails/spine.png" style="width:80%">
-                  <p style="font-size: x-small;">Spine</p>
-                </div>
-            </div>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script src="speech.js"></script>
 
-            <div class="column nature">
-              <button>
-                <div class="content">
-                  <img alt="bulb" id="https://bit.ly/3j1Zej6" onclick="upload(this.id,this.alt)"
-                    src="assets/3dmodels/thumbnails/bulb.PNG" style="width:80%">
-                  <p style="font-size: x-small;">Bulb</p>
-                </div>
-              </button>
-            </div>
-            <div class="column nature">
-              <button>
-                <div class="content">
-                  <img alt="ball" id="https://p3d.in/3PXGe" onclick="upload(this.id,this.alt)"
-                    src="assets/3dmodels/thumbnails/ball.PNG" style="width:80%">
-                  <p style="font-size: x-small;">Ball</p>
-                </div>
-              </button>
-            </div>
 
-            <div class="column nature">
-              <button>
-                <div class="content">
-                  <img alt="eye" id="https://p3d.in/Sa2HZ" onclick="upload(this.id,this.alt)"
-                    src="assets/3dmodels/thumbnails/humaneye.PNG" style="width:80%">
-                  <p style="font-size: x-small;">Eye Ball</p>
-                </div>
-              </button>
-            </div>
 
-            <div class="column nature">
-              <button>
-                <div class="content">
-                  <img alt="body" id="https://p3d.in/05fmR" onclick="upload(this.id,this.alt)"
-                    src="assets/3dmodels/thumbnails/humanbody.PNG" style="width:80%">
-                  <p style="font-size: x-small;">Human Body</p>
-                </div>
-              </button>
-            </div>
-            <div class="column nature">
-              <button>
-                <div class="content">
-                  <img alt="cell" id="https://p3d.in/lTiw3" onclick="upload(this.id,this.alt)"
-                    src="assets/3dmodels/thumbnails/CellStructure.PNG" style="width:80%">
-                  <p style="font-size: x-small;">Animal Cell</p>
-                </div>
-              </button>
-            </div>
-            <div class="column nature">
-              <button>
-                <div class="content">
-                  <img alt="heart" id="https://p3d.in/cfpek" onclick="upload(this.id,this.alt)"
-                    src="assets/3dmodels/thumbnails/heart.PNG" style="width:80%">
-                  <p style="font-size: x-small;">Heart</p>
-                </div>
-              </button>
-            </div>
+          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+          <style>
+            * {
+              margin: 0;
+              padding: 0;
+            }
 
-            <div class="column nature">
-              <button>
-                <div class="content">
-                  <img
-                    id="https://v.creators3d.com/index.html?load=/views/production/item/2020819/9211259937682196/9211259937682196.glb&autorotate=true&json-data=1597852519794&decrypt=1&gzip=true&tv=112&exp=0.78&hdr-intensity=0.9&le-probe=0&hdr=10&phcl=true&plane=0.1"
-                    alt="atom" onclick="upload(this.id,this.alt)" src="assets/3dmodels/thumbnails/atomstruct.png"
-                    style="width:100%">
-                  <p style="font-size: x-small;">Atom</p>
-                </div>
-              </button>
-            </div>
-            <div class="column nature">
-              <button>
-                <div class="content">
-                  <img id="https://p3d.in/0MrVC" alt="diamond" onclick="upload(this.id,this.alt)"
-                    src="assets/3dmodels/thumbnails/diamond.PNG" style="width:100%">
-                  <p style="font-size: x-small;">Diamond</p>
-                </div>
-              </button>
-            </div>
-            <div class="column nature">
-              <button>
-                <div class="content">
-                  <img id="https://p3d.in/uV1R6" alt="anatomy" onclick="upload(this.id,this.alt)"
-                    src="assets/3dmodels/thumbnails/HumanAnatomy.PNG" style="width:100%">
-                  <p style="font-size: x-small;">Human Muscles</h4>
-                </div>
-              </button>
-            </div>
-            <!-- END GRID -->            
-          </div>
+            html,
+            body {
+              box-sizing: border-box;
+              height: 100%;
+              width: 100%;
+            }
+
+
+            .buttons {
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+              justify-content: center;
+              text-align: center;
+              width: 100%;
+              height: 100%;
+              margin: 0 auto;
+              /*   padding: 2em 0em; */
+            }
+
+            .container1 {
+              align-items: center;
+              display: inline-flex;
+              flex-direction: row;
+              justify-content: center;
+              text-align: center;
+              background-color: #FFF;
+              padding: 10px 0px;
+              width: 500px;
+            }
+
+
+
+            .btn1 {
+              letter-spacing: 0.1em;
+              cursor: pointer;
+              font-size: 14px;
+              font-weight: 100;
+              line-height: 45px;
+              max-width: 500px;
+              position: relative;
+              text-decoration: none;
+              text-transform: uppercase;
+              width: 100%;
+            }
+
+            .btn:hover {
+              text-decoration: none;
+            }
+
+            /*btn_background*/
+            .effect01 {
+              color: #FFF;
+              border: 4px solid #000;
+              box-shadow: 0px 0px 0px 1px #000 inset;
+              background-color: rgb(0, 0, 0);
+              overflow: hidden;
+              position: relative;
+              transition: all 0.3s ease-in-out;
+            }
+
+            .effect01:hover {
+              border: 4px solid #666;
+              background-color: #FFF;
+              box-shadow: 0px 0px 0px 4px #EEE inset;
+            }
+
+            /*btn_text*/
+            .effect01 span {
+              transition: all 0.2s ease-out;
+              z-index: 2;
+            }
+
+            .effect01:hover span {
+              letter-spacing: 0.13em;
+              color: #333;
+            }
+
+            /*highlight*/
+            .effect01:after {
+              background: #FFF;
+              border: 0px solid #000;
+              content: "";
+              height: 155px;
+              left: -75px;
+              opacity: .8;
+              position: absolute;
+              top: -50px;
+              -webkit-transform: rotate(35deg);
+              transform: rotate(35deg);
+              width: 50px;
+              transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+              /*easeOutCirc*/
+              z-index: 1;
+            }
+
+            .effect01:hover:after {
+              background: #FFF;
+              border: 20px solid #000;
+              opacity: 0;
+              left: 120%;
+              -webkit-transform: rotate(40deg);
+              transform: rotate(40deg);
+            }
+          </style>
+
         </div>
       </div>
-
     </div>
+
+  </div>
   </div>
   </div>
 

@@ -45,7 +45,7 @@ window.addEventListener("DOMContentLoaded", (e) => {
           <div class="card-body">
             <h5 class="card-title">${subject}</h5>
             <p class="card-text">This is a card for section ${section}</p>
-            <a href="Classroom_students?id=${c}" class="btn btn-primary stretched-link"
+            <a href="Classroom_teacher.html?id=${c}" class="btn btn-primary stretched-link"
               >Open classroom</a
             >
           </div>
@@ -73,6 +73,8 @@ window.addEventListener("DOMContentLoaded", (e) => {
       });
   });
   let classAdd = document.getElementById("add-class");
+
+  
   classAdd.addEventListener("click", (e) => {
     e.preventDefault();
     const sub = document.getElementById("subject").value;

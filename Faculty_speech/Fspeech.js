@@ -19,6 +19,7 @@ recognition.maxAlternatives = 1;
 var diagnostic = document.querySelector('.output', (intg)=>{
     intg.preventDefault();
 });
+var clear_data = document.querySelector('.clear');
 
 
 window.setInterval(stt, 10);
@@ -69,6 +70,21 @@ function stt(){
         //testBtn.disabled = false;
         diagnostic.textContent = 'Error occurred in recognition: ' + event.error;
       }
+    }
+
+    ///Clearing data
+    clear_data.addEventListener('click', (e) =>{
+        e.stopPropagation();
+        //db.collection('testdata').delete();
+
+        db.collection('testdata').get().then((snapshot)=>{
+            snapshot.forEach((i)=>{
+                i.delete();
+            });
+          });
+    })
+    
+    
 
     //   recognition.onaudiostart = function(event) {
     //       //Fired when the user agent has started to capture audio.
@@ -108,4 +124,3 @@ function stt(){
     //       //Fired when the speech recognition service has begun listening to incoming audio with intent to recognize grammars associated with the current SpeechRecognition.
     //       console.log('SpeechRecognition.onstart');
     //   }
-}

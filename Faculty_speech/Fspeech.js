@@ -16,13 +16,15 @@ recognition.maxAlternatives = 1;
 
 
 //DOM element
-var diagnostic = document.querySelector('.output', (intg)=>{
-    intg.preventDefault();
-});
+// var diagnostic = document.querySelector('.output', (intg)=>{
+//     intg.preventDefault();
+// });
 var clear_data = document.querySelector('.clear');
+var start_data = document.querySelector('.start');
+var stop_data = document.querySelector('.stop');
 
 
-window.setInterval(stt, 10);
+// window.setInterval(stt, 10);
 
 
 function contain(inputspeech){
@@ -48,14 +50,14 @@ function contain(inputspeech){
 };
 var caption; 
 
-function stt(){
+// function stt(){
     recognition.start();
     console.log("listening");
 
     recognition.onresult = function(event) {
       console.log("in the on result")
       var data = event.results[0][0].transcript;
-      diagnostic.textContent =  data + ' ';
+    //   diagnostic.textContent =  data + ' ';
       console.log(data);
       console.log('Confidence: ' + event.results[0][0].confidence);
       contain(data);
@@ -70,7 +72,7 @@ function stt(){
         //testBtn.disabled = false;
         diagnostic.textContent = 'Error occurred in recognition: ' + event.error;
       }
-    }
+    // }
 
     ///Clearing data
     clear_data.addEventListener('click',(e) =>{
@@ -90,7 +92,14 @@ function stt(){
         //   });
     })
     
-    
+$('#start').on('click', function(e) {
+        recognition.start();
+      });
+      
+      
+ $('#stop').on('click', function(e) {
+        recognition.stop();
+      }); 
 
     //   recognition.onaudiostart = function(event) {
     //       //Fired when the user agent has started to capture audio.

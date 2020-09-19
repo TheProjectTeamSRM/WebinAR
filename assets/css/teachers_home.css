@@ -38,3 +38,8 @@ ion-icon {
   border-bottom-width: 5px;
   border-bottom-color: #fff;
 }
+
+
+.navbar-brand{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

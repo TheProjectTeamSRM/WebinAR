@@ -1,11 +1,24 @@
-var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-var recognition = new SpeechRecognition();
+var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
+var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
+var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
 
-  
+var database = ['electron', 'proton', 'neutron', 'atom', 'tissues', 'plant', 'animal'] 
+
+var grammar = '#JSGF V1.0; grammar database;'
+var recognition = new SpeechRecognition();
+var speechRecognitionList = new SpeechGrammarList();
+speechRecognitionList.addFromString(grammar, 1);
+recognition.grammars = speechRecognitionList;
+recognition.continuous = false;
+recognition.lang = 'en-US';
+recognition.interimResults = false;
+recognition.maxAlternatives = 1;
+
+
+//Jquery DOM
   var noteTextarea = $('#note-textarea');
   var instructions = $('#recording-instructions');
   var notesList = $('ul#notes');
-  
   var noteContent = '';
   
   // Get all notes from previous sessions and display them.

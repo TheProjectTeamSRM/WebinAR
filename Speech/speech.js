@@ -54,6 +54,7 @@ function stt(){
       recognition.onerror = function(event) {
         if(event.error == 'no-speech') {
           instructions.text('No speech was detected. Try again.');  
+          
         };
       }
 

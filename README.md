@@ -61,19 +61,19 @@ Here are some of the key benefits of using Webin<b>AR</b> in education and learn
 
 ## Proposed Technology Stack 💻
 
+- HTML5
+- CSS
+- BootStrap
 - Firebase
-- Azure
-- React
-- React Native
-- HTML, CSS, JavaScript
+- Javascript
 
 ## Tools and APIs🎯
 
 - Agora
 - SketchFab
-- AR JS
+- AR.js
 - Netlify (For Initial Testing)
-- Web Speech API
+- WebSpeech API
 - EchoAR
 
 ## Use Cases 🤝

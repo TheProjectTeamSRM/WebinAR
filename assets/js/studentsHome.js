@@ -5,7 +5,7 @@ window.addEventListener("DOMContentLoaded", (e) => {
       console.log(user);
       dynamicInsertion();
     } else {
-      window.location.replace("faculty-login.html");
+      window.location.replace("student-login.html");
     }
   });
   async function dynamicInsertion() {
@@ -71,6 +71,6 @@ classAdd.addEventListener("click", async (e) => {
   let classes = result.data().classes;
   classes.push(classId);
   db.collection("users").doc(auth.currentUser.uid).update({ classes });
-  window.reload();
+  location.reload();
   document.getElementById("closeBtn").click();
 });

@@ -96,7 +96,7 @@ window.addEventListener("DOMContentLoaded", (e) => {
         let classes = result.data().classes;
         classes.push(classId);
         db.collection("users").doc(auth.currentUser.uid).update({ classes });
-        window.reload();
+        location.reload();
         document.getElementById("closebtn").click();
       });
   });

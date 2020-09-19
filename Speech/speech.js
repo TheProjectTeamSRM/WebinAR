@@ -15,10 +15,12 @@ var recognition = new SpeechRecognition();
   
 
   recognition.continuous = true;
+
   recognition.onresult = function(event) {
     var current = event.resultIndex;
     var transcript = event.results[current][0].transcript;
     var mobileRepeatBug = (current == 1 && transcript == event.results[0][0].transcript);
+    console.log(transcript);
   
     if(!mobileRepeatBug) {
       noteContent += transcript;
@@ -44,7 +46,7 @@ var recognition = new SpeechRecognition();
   
  //DOM manupulation
   
-  $('#start-record-btn').on('click', function(e) {
+  $('#startbtn').on('click', function(e) {
     if (noteContent.length) {
       noteContent += ' ';
     }
@@ -52,7 +54,7 @@ var recognition = new SpeechRecognition();
   });
   
   
-  $('#pause-record-btn').on('click', function(e) {
+  $('#pausebtn').on('click', function(e) {
     recognition.stop();
     instructions.text('Voice recognition paused.');
   });
@@ -61,7 +63,7 @@ var recognition = new SpeechRecognition();
     noteContent = $(this).val();
   })
   
-  $('#save-note-btn').on('click', function(e) {
+  $('#savebtn').on('click', function(e) {
     recognition.stop();
   
     if(!noteContent.length) {

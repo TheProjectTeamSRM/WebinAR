@@ -10,9 +10,33 @@
 
 ## Problem Statement 🚧
 
+- Open Innovation (Track)
+- Webin-AR (Our Hack)
 
+## Background 📖
 
+We’re living in a digital age where technology has had a transformative effect on the way we live and work. Slowly and steadily, technology has been making strides in revolutionizing methods of learning and teaching. Technology-enabled curriculum and smart boards have long replaced traditional blackboards and two-dimensional textbook images.
 
+By creating an immersive and interactive learning experience without the use of textbooks, AR and VR technology empowers learners to explore and learn at their own pace, thus stimulating learning and comprehension and enhances critical retention. VR and AR-based apps for education, that combine digital technologies and learning, improve the educational process and allow students to acquire information visually.
 
+Here are some of the key benefits of using AR and VR technology in education and learning.
 
+- Facilitates student learning through gamification and interactivity
+- Keeps students engaged even while learning difficult topics
+- Enhances creative thinking
+- Fewer distractions
+- Can be used for practical training
+- Expanded teaching possibilities with 3D design, modeling, and presentations
+
+## About Our Product 🔧
+
+### What
+
+#### We at team Alpha Beta Debug, propose a Web-application which is educative, personalized and most importantly affordable. Our web-app called 'Webin-AR' serves the purpose of educating and helping the students as well as the teachers during this time of the pandemic. This web-app focuses on both primary and secondary education, it helps the students to learn and visualize basic concepts. We do not store any essential data, as Security of the system is our priority. The WebApp provides minimalist interface aimed at users from all age groups.
+
+#### With our product, we have implemented a fully fledged classroom experience for the students as well as teachers. We have created separate portals for the faculty and students. Once everyone has signed up to the web-app. The user can simply login using their credentials to their respective portal. 
+
+#### The faculty portal will be having a video call feature named 'Webin-AR Meet', where the teacher will be starting the class from one side and the students can join using the credentials given by the teacher. The video call feature allows a better interaction between the teacher and students which is lacking at this time of the pandemic. The video call is secure and by using an App ID and a Token ID,students can only then join the class.
+
+#### The faculty portal also has a feature of voice detection
 

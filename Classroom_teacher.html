@@ -1,407 +1,469 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/teachers_home.css" />
+    <title>Classroom</title>
+  </head>
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-  <link rel="stylesheet" href="./assets/css/teachers_home.css" />
-  <title>Classroom</title>
-</head>
+  <body>
+    <!-- Navbar -->
+    <section id="navigation">
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-light shadow-lg sticky-top"
+      >
+        <a class="navbar-brand ml-3 text-white h1 mt-3" href="#">Webin-AR</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-
-<body>
-  <!-- Navbar -->
-  <section id="navigation">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg sticky-top">
-      <a class="navbar-brand ml-3 text-white h1 mt-3" href="#">Webin-AR</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item mt-3 mr-3">
-            <button class="btn btn-outline-primary text-white border-white" id="classbtn">
-              Join Meet
-            </button>
-          </li>
-          <li class="nav-item mt-3 mr-3">
-            <button class="btn btn-outline-primary text-white border-white" id="logout">
-              Logout
-            </button>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </section>
-  <!-- Tabbed Nav -->
-  <div class="full-container mt-5 pl-0 ml-0">
-    <nav>
-      <div class="nav nav-tabs" id="nav-tab" role="tablist">
-        <a class="nav-item nav-link active" id="nav-messages" data-toggle="tab" href="#nav-messages-data" role="tab"
-          aria-controls="nav-messages" aria-selected="true">Messages</a>
-        <a class="nav-item nav-link" id="nav-documents" data-toggle="tab" href="#nav-documents-data" role="tab"
-          aria-controls="nav-documents" aria-selected="false">Documents</a>
-      </div>
-    </nav>
-    <!-- Tabbed Data -->
-    <div class="tab-content mt-2" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="nav-messages-data" role="tabpanel" aria-labelledby="nav-messages-tab">
-        <div class="full-container ml-0" style="
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mt-3 mr-3">
+              <button
+                class="btn btn-outline-primary text-white border-white"
+                id="classbtn"
+              >
+                Join Meet
+              </button>
+            </li>
+            <li class="nav-item mt-3 mr-3">
+              <button
+                class="btn btn-outline-primary text-white border-white"
+                id="logout"
+              >
+                Logout
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </section>
+    <!-- Tabbed Nav -->
+    <div class="full-container mt-5 pl-0 ml-0">
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a
+            class="nav-item nav-link active"
+            id="nav-messages"
+            data-toggle="tab"
+            href="#nav-messages-data"
+            role="tab"
+            aria-controls="nav-messages"
+            aria-selected="true"
+            >Messages</a
+          >
+          <a
+            class="nav-item nav-link"
+            id="nav-documents"
+            data-toggle="tab"
+            href="#nav-documents-data"
+            role="tab"
+            aria-controls="nav-documents"
+            aria-selected="false"
+            >Documents</a
+          >
+        </div>
+      </nav>
+      <!-- Tabbed Data -->
+      <div class="tab-content mt-2" id="nav-tabContent">
+        <div
+          class="tab-pane fade show active"
+          id="nav-messages-data"
+          role="tabpanel"
+          aria-labelledby="nav-messages-tab"
+        >
+          <div
+            class="full-container ml-0"
+            style="
               overflow-y: auto;
               height: 60vh;
               border-width: 20px;
               border-color: blue;
-            " id="message-container">
+            "
+            id="message-container"
+          ></div>
+          <br />
+          <div class="container">
+            <div class="container__item">
+              <form class="form">
+                <input
+                  type="email"
+                  class="form__field"
+                  placeholder="Your Message"
+                  id="msg_val"
+                />
+                <button
+                  type="button"
+                  class="btn btn--primary btn--inside uppercase"
+                  id="msg_send"
+                >
+                  Send
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="nav-documents-data"
+          role="tabpanel"
+          aria-labelledby="nav-documents-tab"
+        >
+          <div
+            class="full-container ml-0"
+            style="overflow-y: auto; height: 60vh;"
+            id="document-container"
+          ></div>
+          <br />
+          <div class="full-container ml-0" style="height: 10vh;">
+            <button
+              class="button1"
+              style="margin-left: 2rem;"
+              data-toggle="modal"
+              data-target="#exampleModal"
+            >
+              Button
+            </button>
 
-        </div>
-        <br />
-        <div class="container">
-          <div class="container__item">
-            <form class="form">
-              <input type="email" class="form__field" placeholder="Your Message" id="msg_val" />
-              <button type="button" class="btn btn--primary btn--inside uppercase" id="msg_send">
-                Send
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="tab-pane fade" id="nav-documents-data" role="tabpanel" aria-labelledby="nav-documents-tab">
-        <div class="full-container ml-0" style="overflow-y: auto; height: 60vh;">
-          <div class="callout callout-danger" data-aos="fade-up" data-aos-delay="400" style="border-radius: 20px;">
-            <h5>Week 1 notes</h5>
-            <p>These are notes for week one</p>
-            <a href="./assets/img/home/empty_class.jpg" download>Click here to download</a>
-          </div>
-          <div class="callout callout-danger" data-aos="fade-up" data-aos-delay="400" aos style="border-radius: 20px;">
-            <h5>Week 1 notes</h5>
-            <p>These are notes for week one</p>
-            <a href="./assets/img/home/empty_class.jpg" download>Click here to download</a>
-          </div>
-          <div class="callout callout-danger" data-aos="fade-up" data-aos-delay="400" aos style="border-radius: 20px;">
-            <h5>Week 1 notes</h5>
-            <p>These are notes for week one</p>
-            <a href="./assets/img/home/empty_class.jpg" download>Click here to download</a>
-          </div>
-          <div class="callout callout-danger" data-aos="fade-up" data-aos-delay="400" aos style="border-radius: 20px;">
-            <h5>Week 1 notes</h5>
-            <p>These are notes for week one</p>
-            <a href="./assets/img/home/empty_class.jpg" download>Click here to download</a>
-          </div>
-          <div class="callout callout-danger" data-aos="fade-up" data-aos-delay="400" aos style="border-radius: 20px;">
-            <h5>Week 1 notes</h5>
-            <p>These are notes for week one</p>
-            <a href="./assets/img/home/empty_class.jpg" download>Click here to download</a>
-          </div>
-          <div class="callout callout-danger" data-aos="fade-up" data-aos-delay="400" aos style="border-radius: 20px;">
-            <h5>Week 1 notes</h5>
-            <p>These are notes for week one</p>
-            <a href="./assets/img/home/empty_class.jpg" download>Click here to download</a>
-          </div>
-          <div class="callout callout-danger" data-aos="fade-up" data-aos-delay="400" aos style="border-radius: 20px;">
-            <h5>Week 1 notes</h5>
-            <p>These are notes for week one</p>
-            <a href="./assets/img/home/empty_class.jpg" download>Click here to download</a>
-          </div>
-          <div class="callout callout-danger" data-aos="fade-up" data-aos-delay="400" aos style="border-radius: 20px;">
-            <h5>Week 1 notes</h5>
-            <p>These are notes for week one</p>
-            <a href="./assets/img/home/empty_class.jpg" download>Click here to download</a>
-          </div>
-        </div>
-        <br />
-        <div class="full-container ml-0" style=" height: 10vh;">
-          <button class="button1" style="margin-left: 2rem;" data-toggle="modal"
-            data-target="#exampleModal">Button</button>
-
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Upload new Documents here: </h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <form>
-                    <div class="form-group">
-                      <label for="exampleFormControlInput1">Title:</label>
-                      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlInput1">Description:</label>
-                      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="What is the file">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlInput1">Link:</label>
-                      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="URL of the file">
-                    </div>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Upload new Documents here:
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                      id="close_documents"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Title:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="file_title"
+                          placeholder="Title"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1"
+                          >Description:</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="file_description"
+                          placeholder="What is the file"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Link:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="file_url"
+                          placeholder="URL of the file"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="btn btn-primary" class="btn btn-primary" id="doc_btn">
+                      Save changes
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
-  </div>
-  <!-- Scripts -->
-  <script src="#" defer></script>
+    <!-- Scripts -->
+    <script src="#" defer></script>
 
-  <style>
-    .button1 {
-      background-color: #d3394c;
-      border: none;
-      color: white;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      cursor: pointer;
-    }
+    <style>
+      .button1 {
+        background-color: #d3394c;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
 
-    :root {
-      background: #f5f6fa;
-      color: #9c9c9c;
-      font: 1rem "PT Sans", sans-serif;
-    }
+      :root {
+        background: #f5f6fa;
+        color: #9c9c9c;
+        font: 1rem "PT Sans", sans-serif;
+      }
 
-    html,
-    body,
-    .container {
-      height: 100%;
-    }
+      html,
+      body,
+      .container {
+        height: 100%;
+      }
 
-    .container {
-      display: -webkit-box;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      flex-direction: column;
-      -webkit-box-align: center;
-      align-items: center;
-      -webkit-box-pack: center;
-      justify-content: center;
-    }
+      .container {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+      }
 
-    .uppercase {
-      text-transform: uppercase;
-    }
+      .uppercase {
+        text-transform: uppercase;
+      }
 
-    .btn {
-      display: inline-block;
-      background: transparent;
-      color: inherit;
-      font: inherit;
-      border: 0;
-      outline: 0;
-      padding: 0;
-      -webkit-transition: all 200ms ease-in;
-      transition: all 200ms ease-in;
-      cursor: pointer;
-    }
+      .btn {
+        display: inline-block;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        border: 0;
+        outline: 0;
+        padding: 0;
+        -webkit-transition: all 200ms ease-in;
+        transition: all 200ms ease-in;
+        cursor: pointer;
+      }
 
-    .btn--primary {
-      background: #7f8ff4;
-      color: #fff;
-      box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
-      border-radius: 2px;
-      padding: 12px 36px;
-    }
+      .btn--primary {
+        background: #7f8ff4;
+        color: #fff;
+        box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+        border-radius: 2px;
+        padding: 12px 36px;
+      }
 
-    .btn--primary:hover {
-      background: #6c7ff2;
-    }
+      .btn--primary:hover {
+        background: #6c7ff2;
+      }
 
-    .btn--inside {
-      margin-left: -96px;
-    }
+      .btn--inside {
+        margin-left: -96px;
+      }
 
-    .form__field {
-      width: 360px;
-      background: rgb(192, 192, 192);
-      color: #000000;
-      font: inherit;
-      box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
-      border-width: 2px;
-      border-color: #7183f1;
-      outline: 2px;
-      padding: 22px 18px;
-      box-shadow: 0 4px 8px 0 7183f1, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
+      .form__field {
+        width: 360px;
+        background: rgb(192, 192, 192);
+        color: #000000;
+        font: inherit;
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+        border-width: 2px;
+        border-color: #7183f1;
+        outline: 2px;
+        padding: 22px 18px;
+        box-shadow: 0 4px 8px 0 7183f1, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
 
-    .callout {
-      padding: 20px;
-      margin: 20px 0;
-      border: 1px solid #eee;
-      border-left-width: 5px;
-      border-radius: 3px;
-    }
+      .callout {
+        padding: 20px;
+        margin: 20px 0;
+        border: 1px solid #eee;
+        border-left-width: 5px;
+        border-radius: 3px;
+      }
 
-    .callout h4 {
-      margin-top: 0;
-      margin-bottom: 5px;
-    }
+      .callout h4 {
+        margin-top: 0;
+        margin-bottom: 5px;
+      }
 
-    .callout p:last-child {
-      margin-bottom: 0;
-    }
+      .callout p:last-child {
+        margin-bottom: 0;
+      }
 
-    .callout code {
-      border-radius: 3px;
-    }
+      .callout code {
+        border-radius: 3px;
+      }
 
-    .callout+.bs-callout {
-      margin-top: -5px;
-    }
+      .callout + .bs-callout {
+        margin-top: -5px;
+      }
 
-    .callout-default {
-      border-left-color: #777;
-    }
+      .callout-default {
+        border-left-color: #777;
+      }
 
-    .callout-default h4 {
-      color: #777;
-    }
+      .callout-default h4 {
+        color: #777;
+      }
 
-    .callout-primary {
-      border-left-color: #428bca;
-    }
+      .callout-primary {
+        border-left-color: #428bca;
+      }
 
-    .callout-primary h4 {
-      color: #428bca;
-    }
+      .callout-primary h4 {
+        color: #428bca;
+      }
 
-    .callout-success {
-      border-left-color: #5cb85c;
-    }
+      .callout-success {
+        border-left-color: #5cb85c;
+      }
 
-    .callout-success h4 {
-      color: #5cb85c;
-    }
+      .callout-success h4 {
+        color: #5cb85c;
+      }
 
-    .callout-danger {
-      border-left-color: #d9534f;
-    }
+      .callout-danger {
+        border-left-color: #d9534f;
+      }
 
-    .callout-danger h5 {
-      color: #d9534f;
-    }
+      .callout-danger h5 {
+        color: #d9534f;
+      }
 
-    .callout-warning {
-      border-left-color: #f0ad4e;
-    }
+      .callout-warning {
+        border-left-color: #f0ad4e;
+      }
 
-    .callout-warning h4 {
-      color: #f0ad4e;
-    }
+      .callout-warning h4 {
+        color: #f0ad4e;
+      }
 
-    .callout-info {
-      border-left-color: #5bc0de;
-    }
+      .callout-info {
+        border-left-color: #5bc0de;
+      }
 
-    .callout-info h4 {
-      color: #5bc0de;
-    }
+      .callout-info h4 {
+        color: #5bc0de;
+      }
 
-    .callout-bdc {
-      border-left-color: #29527a;
-    }
+      .callout-bdc {
+        border-left-color: #29527a;
+      }
 
-    .callout-bdc h4 {
-      color: #29527a;
-    }
+      .callout-bdc h4 {
+        color: #29527a;
+      }
 
-    [type="file"] {
-      height: 0.1px;
-      width: 0.1px;
-      opacity: 0;
-      overflow: hidden;
-      position: absolute;
-      z-index: -1;
-    }
+      [type="file"] {
+        height: 0.1px;
+        width: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+      }
 
-    [type="file"]+label {
-      background-color: #d3394c;
-      color: #f1e5e6;
-      cursor: pointer;
-      display: inline-block;
-      font-size: 1.25rem;
-      font-weight: 700;
-      overflow: hidden;
-      padding: 0.625rem 1.25rem;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
+      [type="file"] + label {
+        background-color: #d3394c;
+        color: #f1e5e6;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 1.25rem;
+        font-weight: 700;
+        overflow: hidden;
+        padding: 0.625rem 1.25rem;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
 
-    [type="file"]+label svg {
-      fill: currentColor;
-      height: 1em;
-      width: 1em;
-      margin-top: -0.25em;
-      margin-right: 0.25em;
-      vertical-align: middle;
-    }
+      [type="file"] + label svg {
+        fill: currentColor;
+        height: 1em;
+        width: 1em;
+        margin-top: -0.25em;
+        margin-right: 0.25em;
+        vertical-align: middle;
+      }
 
-    [type="file"]+label:hover {
-      background-color: #722040;
-    }
+      [type="file"] + label:hover {
+        background-color: #722040;
+      }
 
-    [type="file"]:focus+label {
-      background-color: #722040;
-      outline: 1px dotted #000;
-    }
-  </style>
+      [type="file"]:focus + label {
+        background-color: #722040;
+        outline: 1px dotted #000;
+      }
+    </style>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
 
-  <script src="teacher_classroom.js"></script>
+    <script src="teacher_classroom.js"></script>
 
-  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
 
-  <script>
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    var firebaseConfig = {
-      apiKey: "AIzaSyDlvtfuPKGuuK9O0JSSrbPpx6mD_mkpm3Q",
-      authDomain: "webin-ar-1095c.firebaseapp.com",
-      databaseURL: "https://webin-ar-1095c.firebaseio.com",
-      projectId: "webin-ar-1095c",
-      storageBucket: "webin-ar-1095c.appspot.com",
-      messagingSenderId: "227270577042",
-      appId: "1:227270577042:web:349af7d441b70b13380f4b",
-      measurementId: "G-4HZ8NY76VD",
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
-    const db = firebase.firestore();
-  </script>
-</body>
-
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyDlvtfuPKGuuK9O0JSSrbPpx6mD_mkpm3Q",
+        authDomain: "webin-ar-1095c.firebaseapp.com",
+        databaseURL: "https://webin-ar-1095c.firebaseio.com",
+        projectId: "webin-ar-1095c",
+        storageBucket: "webin-ar-1095c.appspot.com",
+        messagingSenderId: "227270577042",
+        appId: "1:227270577042:web:349af7d441b70b13380f4b",
+        measurementId: "G-4HZ8NY76VD",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+    </script>
+  </body>
 </html>

@@ -131,9 +131,9 @@ var recognition = new SpeechRecognition();
           </p>
           <p class="content">${note.content}</p>
         </li>`;   
-        // var data = new Blob([note.content], {type: 'text/plain'});
-        // var url = window.URL.createObjectURL(data);
-        // document.getElementById('download_link').href = url; 
+        var data = new Blob([note.content], {type: 'text/plain'});
+        var url = window.URL.createObjectURL(data);
+        document.getElementById('download_link').href = url; 
       });
     }
     else {

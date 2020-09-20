@@ -69,10 +69,13 @@
             ADD &plus;
           </button>
 
-          <div class="jumbotron">
+          <div class="jumbotron" id="showHere">
             <hr class="my-4">
             <p style="text-align: center; font-family: 'Roboto';font-size: 15px;">The detected models will be displayed
               here:</p>
+             <!-- row here -->
+
+
 
             <hr class="my-4">
 
@@ -123,14 +126,14 @@
                 <div class="content">
                   <img alt="drone"
                     id="https://gltf-viewer.donmccurdy.com#kiosk=1&model=https://storage.googleapis.com/blocks-town/tmp/busterDrone/busterDrone.gltf"
-                    onclick="upload(this.id,this.alt)" src="assets/3dmodels/thumbnails/drone.PNG" style="width:80%">
+                    onclick="upload(this.id,this.alt,this.src)" src="assets/3dmodels/thumbnails/drone.PNG" style="width:80%">
                   <p style="font-size: x-small;"> Drone </p>
                 </div>
             </div>
             <div class="column nature">
               <button>
                 <div class="content">
-                  <img alt="skeleton" id="https://p3d.in/JNSZo" onclick="upload(this.id,this.alt)"
+                  <img alt="skeleton" id="https://p3d.in/JNSZo" onclick="upload(this.id,this.alt,this.src)"
                     src="assets/3dmodels/thumbnails/humanskeleton.PNG" style="width:80%">
                   <p style="font-size: x-small;">Skeleton</p>
                 </div>
@@ -138,7 +141,7 @@
             <div class="column nature">
               <button>
                 <div class="content">
-                  <img alt="neural" id="https://p3d.in/8tTgN" onclick="upload(this.id,this.alt)"
+                  <img alt="neural" id="https://p3d.in/8tTgN" onclick="upload(this.id,this.alt,this.src)"
                     src="assets/3dmodels/thumbnails/Neural Network.png" style="width:80%">
                   <p style="font-size: x-small;">Neural Network</p>
                 </div>
@@ -146,7 +149,7 @@
             <div class="column nature">
               <button>
                 <div class="content">
-                  <img alt="dna" id="https://bit.ly/2Yk3535" onclick="upload(this.id,this.alt)"
+                  <img alt="dna" id="https://bit.ly/2Yk3535" onclick="upload(this.id,this.alt,this.src)"
                     src="assets/3dmodels/thumbnails/DNA.png" style="width:80%">
                   <p style="font-size: x-small;">DNA</p>
                 </div>
@@ -154,7 +157,7 @@
             <div class="column nature">
               <button>
                 <div class="content">
-                  <img alt="Skull" id="https://p3d.in/ScjMy" onclick="upload(this.id,this.alt)"
+                  <img alt="Skull" id="https://p3d.in/ScjMy" onclick="upload(this.id,this.alt,this.src)"
                     src="assets/3dmodels/thumbnails/skull.png" style="width:80%">
                   <p style="font-size: x-small;">Skull</p>
                 </div>
@@ -163,7 +166,7 @@
             <div class="column nature">
               <button>
                 <div class="content">
-                  <img alt="Brain" id="https://p3d.in/TjhKw" onclick="upload(this.id,this.alt)"
+                  <img alt="Brain" id="https://p3d.in/TjhKw" onclick="upload(this.id,this.alt,this.src)"
                     src="assets/3dmodels/thumbnails/brain.png" style="width:80%">
                   <p style="font-size: x-small;">Brain</p>
                 </div>
@@ -172,7 +175,7 @@
             <div class="column nature">
               <button>
                 <div class="content">
-                  <img alt="Spine" id="https://p3d.in/5DMLi" onclick="upload(this.id,this.alt)"
+                  <img alt="Spine" id="https://p3d.in/5DMLi" onclick="upload(this.id,this.alt,this.src)"
                     src="assets/3dmodels/thumbnails/spine.png" style="width:80%">
                   <p style="font-size: x-small;">Spine</p>
                 </div>
@@ -181,7 +184,7 @@
             <div class="column nature">
               <button>
                 <div class="content">
-                  <img alt="bulb" id="https://bit.ly/3j1Zej6" onclick="upload(this.id,this.alt)"
+                  <img alt="bulb" id="https://bit.ly/3j1Zej6" onclick="upload(this.id,this.alt,this.src)"
                     src="assets/3dmodels/thumbnails/bulb.PNG" style="width:80%">
                   <p style="font-size: x-small;">Bulb</p>
                 </div>
@@ -190,7 +193,7 @@
             <div class="column nature">
               <button>
                 <div class="content">
-                  <img alt="ball" id="https://p3d.in/3PXGe" onclick="upload(this.id,this.alt)"
+                  <img alt="ball" id="https://p3d.in/3PXGe" onclick="upload(this.id,this.alt,this.src)"
                     src="assets/3dmodels/thumbnails/ball.PNG" style="width:80%">
                   <p style="font-size: x-small;">Ball</p>
                 </div>
@@ -200,7 +203,7 @@
             <div class="column nature">
               <button>
                 <div class="content">
-                  <img alt="eye" id="https://p3d.in/Sa2HZ" onclick="upload(this.id,this.alt)"
+                  <img alt="eye" id="https://p3d.in/Sa2HZ" onclick="upload(this.id,this.alt,this.src)"
                     src="assets/3dmodels/thumbnails/humaneye.PNG" style="width:80%">
                   <p style="font-size: x-small;">Eye Ball</p>
                 </div>
@@ -210,7 +213,7 @@
             <div class="column nature">
               <button>
                 <div class="content">
-                  <img alt="body" id="https://p3d.in/05fmR" onclick="upload(this.id,this.alt)"
+                  <img alt="body" id="https://p3d.in/05fmR" onclick="upload(this.id,this.alt,this.src)"
                     src="assets/3dmodels/thumbnails/humanbody.PNG" style="width:80%">
                   <p style="font-size: x-small;">Human Body</p>
                 </div>
@@ -219,7 +222,7 @@
             <div class="column nature">
               <button>
                 <div class="content">
-                  <img alt="cell" id="https://p3d.in/lTiw3" onclick="upload(this.id,this.alt)"
+                  <img alt="cell" id="https://p3d.in/lTiw3" onclick="upload(this.id,this.alt,this.src)"
                     src="assets/3dmodels/thumbnails/CellStructure.PNG" style="width:80%">
                   <p style="font-size: x-small;">Animal Cell</p>
                 </div>
@@ -228,7 +231,7 @@
             <div class="column nature">
               <button>
                 <div class="content">
-                  <img alt="heart" id="https://p3d.in/cfpek" onclick="upload(this.id,this.alt)"
+                  <img alt="heart" id="https://p3d.in/cfpek" onclick="upload(this.id,this.alt,this.src)"
                     src="assets/3dmodels/thumbnails/heart.PNG" style="width:80%">
                   <p style="font-size: x-small;">Heart</p>
                 </div>
@@ -240,7 +243,7 @@
                 <div class="content">
                   <img
                     id="https://v.creators3d.com/index.html?load=/views/production/item/2020819/9211259937682196/9211259937682196.glb&autorotate=true&json-data=1597852519794&decrypt=1&gzip=true&tv=112&exp=0.78&hdr-intensity=0.9&le-probe=0&hdr=10&phcl=true&plane=0.1"
-                    alt="atom" onclick="upload(this.id,this.alt)" src="assets/3dmodels/thumbnails/atomstruct.png"
+                    alt="atom" onclick="upload(this.id,this.alt,this.src)" src="assets/3dmodels/thumbnails/atomstruct.png"
                     style="width:100%">
                   <p style="font-size: x-small;">Atom</p>
                 </div>
@@ -249,7 +252,7 @@
             <div class="column nature">
               <button>
                 <div class="content">
-                  <img id="https://p3d.in/0MrVC" alt="diamond" onclick="upload(this.id,this.alt)"
+                  <img id="https://p3d.in/0MrVC" alt="diamond" onclick="upload(this.id,this.alt,this.src)"
                     src="assets/3dmodels/thumbnails/diamond.PNG" style="width:100%">
                   <p style="font-size: x-small;">Diamond</p>
                 </div>
@@ -258,7 +261,7 @@
             <div class="column nature">
               <button>
                 <div class="content">
-                  <img id="https://p3d.in/uV1R6" alt="anatomy" onclick="upload(this.id,this.alt)"
+                  <img id="https://p3d.in/uV1R6" alt="anatomy" onclick="upload(this.id,this.alt,this.src)"
                     src="assets/3dmodels/thumbnails/HumanAnatomy.PNG" style="width:100%">
                   <p style="font-size: x-small;">Human Muscles</h4>
                 </div>

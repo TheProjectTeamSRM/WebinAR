@@ -8,7 +8,7 @@ window.addEventListener("DOMContentLoaded", (e) => {
       window.location.replace("student-login.html");
     }
   });
-  async function dynamicInsertion() {
+  async function dynamicInsertion() {    
     let result = await db.collection("users").doc(auth.currentUser.uid).get();
     if (result.data().classes.length > 0) {
       document.getElementById("empty-classes").style.display = "none";

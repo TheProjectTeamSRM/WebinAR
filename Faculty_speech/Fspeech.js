@@ -19,12 +19,12 @@ recognition.maxAlternatives = 1;
 // var diagnostic = document.querySelector('.output', (intg)=>{
 //     intg.preventDefault();
 // });
-var clear_data = document.querySelector('.clear');
-var start_data = document.querySelector('.start');
-var stop_data = document.querySelector('.stop');
+var clear_data = document.getElementById("clear");
+// var start_data = document.querySelector('.start');
+// var stop_data = document.querySelector('.stop');
 
 
-// window.setInterval(stt, 10);
+window.setInterval(stt, 1000);
 
 
 function contain(inputspeech){
@@ -50,7 +50,7 @@ function contain(inputspeech){
 };
 var caption; 
 
-// function stt(){
+function stt(){
     recognition.start();
     console.log("listening");
 
@@ -70,12 +70,13 @@ var caption;
 
       recognition.onerror = function(event) {
         //testBtn.disabled = false;
-        diagnostic.textContent = 'Error occurred in recognition: ' + event.error;
+        //diagnostic.textContent = 'Error occurred in recognition: ' + event.error;
       }
-    // }
+    }
 
     ///Clearing data
     clear_data.addEventListener('click',(e) =>{
+        console.log("Clear Triggered");
         e.stopPropagation();       
         db.collection("testdata")
         .get()
@@ -92,50 +93,52 @@ var caption;
         //   });
     })
     
-$('#start').on('click', function(e) {
-        recognition.start();
-      });
+// $('#start').on('click', function(e) {
+//         recognition.start();
+//         console.log("listening");
+//       });
       
       
- $('#stop').on('click', function(e) {
-        recognition.stop();
-      }); 
+//  $('#stop').on('click', function(e) {
+//         recognition.stop();
+//         console.log("Stopped listening");
+//       }); 
 
-    //   recognition.onaudiostart = function(event) {
-    //       //Fired when the user agent has started to capture audio.
-    //       console.log('SpeechRecognition.onaudiostart');
-    //   }
+      recognition.onaudiostart = function(event) {
+          //Fired when the user agent has started to capture audio.
+          console.log('SpeechRecognition.onaudiostart');
+      }
 
-    //   recognition.onaudioend = function(event) {
-    //       //Fired when the user agent has finished capturing audio.
-    //       console.log('SpeechRecognition.onaudioend');
-    //   }
+      recognition.onaudioend = function(event) {
+          //Fired when the user agent has finished capturing audio.
+          console.log('SpeechRecognition.onaudioend');
+      }
 
-    //   recognition.onend = function(event) {
-    //       //Fired when the speech recognition service has disconnected.
-    //       console.log('SpeechRecognition.onend');
-    //   }
+      recognition.onend = function(event) {
+          //Fired when the speech recognition service has disconnected.
+          console.log('SpeechRecognition.onend');
+      }
 
-    //   recognition.onnomatch = function(event) {
-    //       //Fired when the speech recognition service returns a final result with no significant recognition. This may involve some degree of recognition, which doesn't meet or exceed the confidence threshold.
-    //       console.log('SpeechRecognition.onnomatch');
-    //   }
+      recognition.onnomatch = function(event) {
+          //Fired when the speech recognition service returns a final result with no significant recognition. This may involve some degree of recognition, which doesn't meet or exceed the confidence threshold.
+          console.log('SpeechRecognition.onnomatch');
+      }
 
-    //   recognition.onsoundstart = function(event) {
-    //       //Fired when any sound — recognisable speech or not — has been detected.
-    //       console.log('SpeechRecognition.onsoundstart');
-    //   }
+      recognition.onsoundstart = function(event) {
+          //Fired when any sound — recognisable speech or not — has been detected.
+          console.log('SpeechRecognition.onsoundstart');
+      }
 
-    //   recognition.onsoundend = function(event) {
-    //       //Fired when any sound — recognisable speech or not — has stopped being detected.
-    //       console.log('SpeechRecognition.onsoundend');
-    //   }
+      recognition.onsoundend = function(event) {
+          //Fired when any sound — recognisable speech or not — has stopped being detected.
+          console.log('SpeechRecognition.onsoundend');
+      }
 
-    //   recognition.onspeechstart = function (event) {
-    //       //Fired when sound that is recognised by the speech recognition service as speech has been detected.
-    //       console.log('SpeechRecognition.onspeechstart');
-    //   }
-    //   recognition.onstart = function(event) {
-    //       //Fired when the speech recognition service has begun listening to incoming audio with intent to recognize grammars associated with the current SpeechRecognition.
-    //       console.log('SpeechRecognition.onstart');
-    //   }
+      recognition.onspeechstart = function (event) {
+          //Fired when sound that is recognised by the speech recognition service as speech has been detected.
+          console.log('SpeechRecognition.onspeechstart');
+      }
+      recognition.onstart = function(event) {
+          //Fired when the speech recognition service has begun listening to incoming audio with intent to recognize grammars associated with the current SpeechRecognition.
+          console.log('SpeechRecognition.onstart');
+      }

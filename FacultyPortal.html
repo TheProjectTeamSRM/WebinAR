@@ -29,10 +29,6 @@
 </head>
 
 <body>
-<button class="start">Start</button>
-<button class="stop">Stop</button>
-<button class="clear">Clear</button>
-
 
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
@@ -65,6 +61,7 @@
         <div id="target1"
           style=" height: 587px; overflow: scroll; border: 5px solid rgb(75, 159, 255); border-radius: 2%;">
           <h2 style="font-family: 'Roboto';">&nbsp;3D Models</h2>
+          <button type="button" id="clear" class="btn btn-secondary">Clear</button>
           <!-- Button trigger modal -->
           &nbsp;
           <button style="align-items: center;" type="button" class="btn btn-success" data-toggle="modal"
@@ -112,7 +109,7 @@
             </div>
           </div>
 
-
+          
           <script src="app.js"></script>
 
 
@@ -288,10 +285,10 @@
 
   <div class="speechcontainer">
     <button id="speech" class="btn">
-      <!-- <i class="fa fa-microphone" aria-hidden="false"></i> -->
-      <button class="start">Start</button>
+      <i class="fa fa-microphone" aria-hidden="false"></i>
+      <!-- <button class="start">Start</button>
       <button class="stop">Stop</button>
-      <button class="clear">Clear</button>
+      <button class="clear">Clear</button> -->
   </div>
 
 

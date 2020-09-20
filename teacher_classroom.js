@@ -8,14 +8,13 @@ function makeid(length) {
   }
   return result;
 }
-
-auth.onAuthStateChanged(user=>{
-  if(user==null)
-  window.location.replace("faculty-login.html");
-
-});
-
 window.addEventListener("DOMContentLoaded", (e) => {
+  auth.onAuthStateChanged((user) => {
+    if (user == null) window.location.replace("faculty-login.html");
+  });
+  // if (auth.currentUser == null) {
+  //   window.location.replace("faculty-login.html");
+  // }
   const urlParams = new URLSearchParams(window.location.search);
   const myParam = urlParams.get("id");
   console.log(myParam);
@@ -152,19 +151,17 @@ window.addEventListener("DOMContentLoaded", (e) => {
       });
   });
 
-
   let logoutBtn = document.getElementById("logout");
   logoutBtn.addEventListener("click", (e) => {
+    console.log("Hello imma leave now");
     e.preventDefault();
     auth
       .signOut()
       .then(function () {
-        window.location.replace("faculty-login.html");  
+        window.location.replace("faculty-login.html");
       })
       .catch(function (error) {
         console.error(error);
       });
   });
-
-
 });

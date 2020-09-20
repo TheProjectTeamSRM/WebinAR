@@ -659,12 +659,6 @@ section {
   resize: both;
 }
 
-#target1 {
-  width: 320px;
-  height: 600px;
-  resize: both;
-}
-
 
 
 .column {
@@ -687,9 +681,33 @@ iframe {
   border: none;
   position: relative;
   display: flex;
-  left: 20px;
+  left: 10px;
 
 }
+
+
+#target1 {
+  width: 320px;
+  height: 600px;
+  resize: both;
+  position: relative;
+  left: 10px;
+}
+
+
+@media (max-width: 575px) {
+  iframe {
+    position: relative;
+    top: 60px;
+    width: 100%;
+    height: 98%;
+    border: none;
+    position: relative;
+    display: flex;
+    left: 10px;
+  
+  }
+  }
 
 
 .about .content .btn-learn-more {

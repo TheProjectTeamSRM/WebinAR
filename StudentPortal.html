@@ -80,7 +80,7 @@
                 </div>
               </div>
 
-              <div class="container">
+              <!-- <div class="container">
                 <div class="row row-cols-4">
                   <div class="col">
                     <div class="buttons">
@@ -108,7 +108,10 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
+              <button id="startbtn" class="btn1 effect01" title="Start Recording">Start Recognition</button>
+              <button id="pausebtn" class="btn1 effect01" title="Pause Recording">Pause Recognition</button>
+              <button id="savebtn" class="btn1 effect01" title="Save Note">Save Note</button>
               <p id="recording-instructions" style="font-family: 'Roboto';font-size: 20px;">Press the <strong
                   style="color:#007bff;">Start Recognition</strong>
                 button and allow access.</p>
@@ -335,7 +338,7 @@
     firebase.initializeApp(firebaseConfig);
     const db=firebase.firestore();
   </script>
-  <script src="StudentPortal.js"></script>  
+  <script src="Speech/speech.js"></script>  
   <script src="assets/js/modelfunct.js"></script>
 
 

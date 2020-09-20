@@ -1,5 +1,4 @@
 window.addEventListener("DOMContentLoaded", (e) => {
-
   auth.onAuthStateChanged((user) => {
     if (user != null) {
       console.log(user);
@@ -8,8 +7,10 @@ window.addEventListener("DOMContentLoaded", (e) => {
       window.location.replace("student-login.html");
     }
   });
-  async function dynamicInsertion() {    
+  async function dynamicInsertion() {
+    console.log("starts insertion");
     let result = await db.collection("users").doc(auth.currentUser.uid).get();
+    console.log(result);
     if (result.data().classes.length > 0) {
       document.getElementById("empty-classes").style.display = "none";
       let classes = result.data().classes;
@@ -41,36 +42,34 @@ window.addEventListener("DOMContentLoaded", (e) => {
     }
   }
 
-
   let logoutBtn = document.getElementById("logout");
   logoutBtn.addEventListener("click", (e) => {
     e.preventDefault();
     auth
       .signOut()
       .then(function () {
-        window.location.replace("student-login.html");  
+        window.location.replace("student-login.html");
       })
       .catch(function (error) {
         console.error(error);
       });
   });
-
-
 });
 
 const classAdd = document.getElementById("join");
-
 classAdd.addEventListener("click", async (e) => {
   e.preventDefault();
   console.log("Clicked");
   let classId = document.getElementById("classCode").value;
-
   document.getElementById("classCode").value = "";
-
   let result = await db.collection("users").doc(auth.currentUser.uid).get();
   let classes = result.data().classes;
   classes.push(classId);
-  db.collection("users").doc(auth.currentUser.uid).update({ classes });
-  location.reload();
-  document.getElementById("closeBtn").click();
+  db.collection("users")
+    .doc(auth.currentUser.uid)
+    .update({ classes })
+    .then((res) => {
+      location.reload();
+      document.getElementById("closeBtn").click();
+    });
 });

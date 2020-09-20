@@ -1,13 +1,8 @@
-
-auth.onAuthStateChanged(user=>{
-  if(user==null)
-  window.location.replace("student-login.html");
-
-})
+auth.onAuthStateChanged((user) => {
+  if (user == null) window.location.replace("student-login.html");
+});
 
 window.addEventListener("DOMContentLoaded", () => {
-
-
   const urlParams = new URLSearchParams(window.location.search);
   const myParam = urlParams.get("id");
   console.log(myParam);
@@ -15,6 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
     .doc(myParam)
     .onSnapshot((snapshot) => {
       const data = snapshot.data();
+      document.getElementById("message-container").innerHTML = "";
       for (key in data) {
         const div = document.createElement("div");
         div.className = "callout callout-primary";
@@ -28,6 +24,8 @@ window.addEventListener("DOMContentLoaded", () => {
     .doc(myParam)
     .onSnapshot((snapshot) => {
       const data = snapshot.data();
+      console.log("documents", data);
+      document.getElementById("documents-container").innerHTML = "";
       for (key in data) {
         const div = document.createElement("div");
         div.className = "callout callout-danger";
@@ -37,20 +35,20 @@ window.addEventListener("DOMContentLoaded", () => {
       <a href="${data[key].link}" download
         >Click here to download</a
       >`;
+        document.getElementById("documents-container").appendChild(div);
       }
     });
 
-    let logoutBtn = document.getElementById("logout");
-    logoutBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      auth
-        .signOut()
-        .then(function () {
-          window.location.replace("student-login.html");  
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
-    });
-
+  let logoutBtn = document.getElementById("logout");
+  logoutBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    auth
+      .signOut()
+      .then(function () {
+        window.location.replace("student-login.html");
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  });
 });

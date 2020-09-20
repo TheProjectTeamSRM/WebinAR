@@ -19,7 +19,7 @@ recognition.maxAlternatives = 1;
 // var diagnostic = document.querySelector('.output', (intg)=>{
 //     intg.preventDefault();
 // });
-var clear_data = document.querySelector('.clear');
+var clear_data = document.getElementById("clear");
 // var start_data = document.querySelector('.start');
 // var stop_data = document.querySelector('.stop');
 
@@ -76,6 +76,7 @@ function stt(){
 
     ///Clearing data
     clear_data.addEventListener('click',(e) =>{
+        console.log("Clear Triggered");
         e.stopPropagation();       
         db.collection("testdata")
         .get()

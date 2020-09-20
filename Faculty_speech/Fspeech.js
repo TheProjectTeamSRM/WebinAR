@@ -28,21 +28,38 @@ window.setInterval(stt, 1000);
 
 
 function contain(inputspeech){
-    console.log("in contain")
-    db.collection('testdata').get().then((snapshot)=>{
-        console.log(snapshot.docs);
-    })
+    console.log("in contain");    
     var dict = { };
     var words = inputspeech.toLowerCase().split(/\s+/);
     console.log(words);
     words.forEach(function(word) {
         console.log('in word function'+database.indexOf(word))
+
+        let html = `<div class="row">`;
         if (database.indexOf(word) > -1) {
             console.log('matched')
             console.log(word);  
-            dict[word]++;
+            db.collection('models').get().then(snapshot=>{
+                snapshot.docs.forEach(doc=>{
+                    if(word == doc.data().word)
+                    {
+                        let url=doc.data().url;
+                        let path=doc.data().path; 
+                        html=html+
+                        `<div class="column nature">
+                            <button>
+                            <div class="content">
+                                <img alt="${word}" id="${url}" onclick="upload(this.id,this.alt)"
+                                src="${path}" style="width:80%">
+                            </div>
+                        </div>`;
+                        document.getElementById('showHere').innerHTML+=html;
+                    }
+                })
+            })
+            dict[word]++;            
             db.collection('testdata').add({
-                data: word
+                word: word
             })
         }
     });
@@ -50,8 +67,8 @@ function contain(inputspeech){
 };
 var caption; 
 
-function stt(){
-    recognition.start();
+ function stt(){
+     recognition.start();
     console.log("listening");
 
     recognition.onresult = function(event) {

@@ -2,7 +2,7 @@ var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
 
-var database = ['electron', 'proton', 'neutron', 'atom', 'tissues', 'plant', 'animal'] 
+var database = ['diamond','anatomy','atom','drone','skeleton','neural', 'dna','Skull','Brain','Spine','bulb','ball','eye','body','cell','heart'] 
 
 var grammar = '#JSGF V1.0; grammar database;'
 var recognition = new SpeechRecognition();
@@ -39,7 +39,7 @@ function contain(inputspeech){
         console.log('in word function'+database.indexOf(word))
         if (database.indexOf(word) > -1) {
             console.log('matched')
-            console.log(word);
+            console.log(word);  
             dict[word]++;
             db.collection('testdata').add({
                 data: word
@@ -60,6 +60,7 @@ function stt(){
     //   diagnostic.textContent =  data + ' ';
       console.log(data);
       console.log('Confidence: ' + event.results[0][0].confidence);
+      console.log('calling contain function');
       contain(data);
       caption = data;
     }
